@@ -44,4 +44,5 @@ done
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
+# Run nvm so that it's accessible
 . ~/projects/nvm/nvm.sh
