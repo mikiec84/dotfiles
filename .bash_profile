@@ -1,5 +1,7 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
+# Add node_modules to path
+export PATH="node_modules/.bin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -46,3 +48,14 @@ done
 
 # Run nvm so that it's accessible
 . ~/projects/nvm/nvm.sh
+# Tell nvm to use the latest node 0.8 branch
+nvm use 0.8.17
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
