@@ -49,7 +49,7 @@ done
 # Run nvm so that it's accessible
 . ~/projects/nvm/nvm.sh
 # Tell nvm to use the latest node 0.8 branch
-nvm use 0.8.17
+nvm use v0.8.23
 
 # {{{
 # Node Completion - Auto-generated, do not touch.
