@@ -52,10 +52,13 @@ done
 nvm use v0.8.23
 
 # {{{
+# Hand modified >_<
 # Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
+if [ -e ~/.node-completion ]; then
+    shopt -s progcomp
+    for f in $(command ls ~/.node-completion); do
+        f="$HOME/.node-completion/$f"
+        test -f "$f" && . "$f"
+    done
+fi
 # }}}
