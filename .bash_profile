@@ -12,7 +12,9 @@ done
 unset file
 
 # init z   https://github.com/rupa/z
-. ~/projects/z/z.sh
+if [ -e ~/projects/z ]; then
+    . ~/projects/z/z.sh
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -47,9 +49,11 @@ done
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 # Run nvm so that it's accessible
-. ~/projects/nvm/nvm.sh
-# Tell nvm to use the latest node 0.8 branch
-nvm use v0.8.23
+if [ -e ~/projects/nvm ]; then
+    . ~/projects/nvm/nvm.sh
+    # Tell nvm to use the latest node 0.8 branch
+    nvm use v0.8.23
+fi
 
 # {{{
 # Hand modified >_<
