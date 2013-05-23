@@ -1,0 +1,15 @@
+function nstart() {
+    git init
+    git add .
+    git commit -m "initial"
+    hub create Raynos/$(basename $PWD)
+    npublish
+    travisify
+    travisify test
+}
+
+function ngenplus() {
+    ngen $1
+    cd $1
+    nstart
+}
