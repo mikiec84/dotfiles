@@ -11,5 +11,10 @@ function nstart() {
 function ngenplus() {
     ngen $1
     cd $1
+
+    if [ ! -z $2 ]; then
+        mv $2 ./index.js
+    fi
+
     nstart
 }
