@@ -9,6 +9,7 @@ function nstart() {
 }
 
 function ngenplus() {
+    cd ~/projects
     ngen $1
     cd $1
 
