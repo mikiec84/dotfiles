@@ -14,8 +14,42 @@ function npmify() {
 }
 
 function ngenplus() {
+    local projectName=$1
+    local isFree=""
+
+    isFree="$(npm info $projectName 2>&1 | grep 'npm ERR! 404 You should bug the author to publish it')"
+
+    # if $isFree is empty then BAD. If it's not empty then GOOD
+    if [[ ! -n "$isFree" ]]; then
+        echo "$projectName already taken on npm"
+        npm info ${projectName} name description author
+        return
+    fi
+
     cd ~/projects
     ngen $1
+    cd $1
+
+    if [ ! -z $2 ]; then
+        mv $2 ./index.js
+    fi
+}
+
+function colingo-ngenplus() {
+    local projectName=$1
+    local isFree=""
+
+    isFree="$(npm info $projectName 2>&1 | grep 'npm ERR! 404 You should bug the author to publish it')"
+
+    # if $isFree is empty then BAD. If it's not empty then GOOD
+    if [[ ! -n "$isFree" ]]; then
+        echo "$projectName already taken on npm"
+        npm info ${projectName} name description author
+        return
+    fi
+
+    cd ~/projects
+    colingo-ngen $1
     cd $1
 
     if [ ! -z $2 ]; then
