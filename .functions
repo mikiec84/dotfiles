@@ -8,6 +8,11 @@ function nstart() {
     travisify test
 }
 
+function npmify() {
+    ngenplus $1 $2
+    nstart
+}
+
 function ngenplus() {
     cd ~/projects
     ngen $1
@@ -16,6 +21,4 @@ function ngenplus() {
     if [ ! -z $2 ]; then
         mv $2 ./index.js
     fi
-
-    nstart
 }
