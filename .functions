@@ -26,12 +26,14 @@ function ngenplus() {
         return
     fi
 
+    local fileLocation="$(pwd)/$2"
+
     cd ~/projects
     ngen $1
     cd $1
 
     if [ ! -z $2 ]; then
-        mv $2 ./index.js
+        cp "$fileLocation" ./index.js
     fi
 }
 
@@ -48,11 +50,13 @@ function colingo-ngenplus() {
         return
     fi
 
+    local fileLocation="$(pwd)/$2"
+
     cd ~/projects
     colingo-ngen $1
     cd $1
 
     if [ ! -z $2 ]; then
-        mv $2 ./index.js
+        cp "$fileLocation" ./index.js
     fi
 }
