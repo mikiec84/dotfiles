@@ -1,3 +1,8 @@
+function npmify() {
+    ngenplus $1 $2
+    nstart
+}
+
 function nstart() {
     git init
     git add .
@@ -8,9 +13,13 @@ function nstart() {
     travisify test
 }
 
-function npmify() {
-    ngenplus $1 $2
-    nstart
+# TODO: write function
+
+function github_pr() {
+    # git push origin master
+    # hub pull-request to github master
+    # hub merge pull request
+    # git pull github master
 }
 
 function ngenplus() {
@@ -35,6 +44,16 @@ function ngenplus() {
     if [ ! -z $2 ]; then
         cp "$fileLocation" ./index.js
     fi
+}
+
+function colingo-nstart() {
+    git init
+    git add .
+    git commit -m "initial"
+    hub create Colingo/$(basename $PWD)
+    npublish
+    travisify
+    travisify test
 }
 
 function colingo-ngenplus() {
