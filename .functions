@@ -14,7 +14,7 @@ function nstart() {
 }
 
 function node-testem() {
-    testem --file="$HOME/testem/node.json" --debug
+    testem --file="$HOME/testem/node.json"
 }
 
 function colingo-nstart() {
