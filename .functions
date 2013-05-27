@@ -104,18 +104,20 @@ function merge_pull_request() {
     return 1
   fi
   local root="${url/\/pull\/+([0-9])/}"
+
   local ref="refs${url:${#root}}/head"
   echo git pull $root $ref
   git pull $root $ref
 }
 
 # TODO: write function
-# function github_pr() {
-    # git push origin master
-    # hub pull-request to github master
-    # hub merge pull request
-    # git pull github master
-# }
+function pr_github() {
+    git push origin master
+    local $uri="$(hub pull-request "$1" -b Colingo:master)"
+
+    google-chrome $uri
+    # TODO: auto merge
+}
 
 function testem-node() {
     testem --file="$HOME/testem/node.json"
