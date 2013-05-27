@@ -13,6 +13,10 @@ function nstart() {
     travisify test
 }
 
+function node-testem() {
+    testem --file="$HOME/testem/node.json" --debug
+}
+
 function colingo-nstart() {
     git init
     git add .
