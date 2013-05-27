@@ -1,0 +1,10 @@
+
+{
+    "src_files": [
+        "./**/*.js"
+    ],
+    "before_tests": "browserify test/index.js -o ~/testem/__bundle.js --debug",
+    "on_exit": "rm ~/testem/__bundle.js",
+    "test_page": "~/testem/test-page.html",
+    "launch_in_dev": ["phantom"]
+}

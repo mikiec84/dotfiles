@@ -13,8 +13,16 @@ function nstart() {
     npublish
 }
 
-function node-testem() {
+function testem-node() {
     testem --file="$HOME/testem/node.json"
+}
+
+function testem-browser() {
+    testem --file="$HOME/testem/browser.json"
+}
+
+function testem-both() {
+    testem --file="$HOME/testem/both.json"
 }
 
 function colingo-nstart() {
