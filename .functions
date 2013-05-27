@@ -110,12 +110,12 @@ function merge_pull_request() {
 }
 
 # TODO: write function
-function github_pr() {
+# function github_pr() {
     # git push origin master
     # hub pull-request to github master
     # hub merge pull request
     # git pull github master
-}
+# }
 
 function testem-node() {
     testem --file="$HOME/testem/node.json"
