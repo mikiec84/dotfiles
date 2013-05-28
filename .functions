@@ -112,9 +112,12 @@ function merge_pull_request() {
 
 # TODO: write function
 function pr_github() {
-    git push origin master
-    local $uri="$(hub pull-request "$1" -b Colingo:master)"
-
+    local branch=${2:-master}
+    git push origin $branch
+    echo git push origin $branch
+    local uri="$(hub pull-request "$1" -h Raynos:$branch -b Colingo:$branch)"
+    echo hub pull-request "$1" -h Raynos:$branch -b Colingo:$branch
+    echo "open $uri"
     google-chrome $uri
     # TODO: auto merge
 }
