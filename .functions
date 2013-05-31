@@ -38,7 +38,7 @@ function ngenplus() {
         return
     fi
 
-    local fileLocation="$(pwd)/$2"
+    local fileLocation="$(pwd)/$2"c
 
     cd ~/projects
     ngen $1
@@ -81,24 +81,42 @@ function colingo-ngenplus() {
 
 # TODO: write function
 function pr_github() {
-    if [[ ! -n "$1" ]]; then
-        echo "pr_github must be called with PR message"
-        return
-    fi
+    # local text
+    # if [[ ! -n "$1" ]]; then
+        # tmpf = $(mktemp)
 
-    local branch=${2:-master}
+        # echo "# Requesting a pull to Colingo:master from Raynos:master" >> tmpf
+        # echo "#" >> tmpf
+        # echo "# Write a message for this pull request. The first block" >> tmpf
+        # echo "# of text is the title and the rest is description." >> tmpf
+
+        # local editor=$EDITOR
+
+        # editor tmpf 3>&1 1>&2 2>&3
+
+        # text="$(cat tmpf)"
+        # # echo "got text $text"
+        # rm tmpf
+    # else
+    #     text="$1"
+    # fi
+
+    local branch=${1:-master}
 
     local status="$(git status | grep 'Changes to be committed')"
 
     if [[ -n "$status" ]]; then
-        git commit -m "$1"
+        git commit 3>&1 1>&2 2>&3
     fi
 
     git push origin $branch
     echo git push origin $branch
-    local uri="$(hub pull-request "$1" -h Raynos:$branch -b Colingo:$branch)"
-    echo hub pull-request "$1" -h Raynos:$branch -b Colingo:$branch
+    local result=$(tempfile)
+    hub pull-request -h Raynos:$branch -b Colingo:$branch 2>$result
+    local uri=$(cat $result)
+    echo hub pull-request "$text" -h Raynos:$branch -b Colingo:$branch
     echo "open $uri"
+    rm $result
     google-chrome "$uri"
     # TODO: auto merge
 }
