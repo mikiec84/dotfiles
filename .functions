@@ -93,9 +93,9 @@ function pr_github() {
     git push origin $branch
     echo git push origin $branch
     local result=$(tempfile)
-    hub pull-request -h Raynos:$branch -b Colingo:$branch 2>$result
+    hub pull-request -h Raynos:$branch -b Colingo:$branch 1>$result
     local uri=$(cat $result)
-    echo hub pull-request "$text" -h Raynos:$branch -b Colingo:$branch
+    echo hub pull-request -h Raynos:$branch -b Colingo:$branch
     rm $result
 
     if [ "$uri" != "Aborting due to empty pull request title" ]
