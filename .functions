@@ -106,6 +106,7 @@ function pr_github() {
     local status="$(git status | grep 'Changes to be committed')"
 
     if [[ -n "$status" ]]; then
+        echo git commit
         git commit 3>&1 1>&2 2>&3
     fi
 
@@ -115,9 +116,13 @@ function pr_github() {
     hub pull-request -h Raynos:$branch -b Colingo:$branch 2>$result
     local uri=$(cat $result)
     echo hub pull-request "$text" -h Raynos:$branch -b Colingo:$branch
-    echo "open $uri"
     rm $result
-    google-chrome "$uri"
+
+    if [ "$uri" != "Aborting due to empty pull request title" ]
+    then
+        echo "open $uri"
+        google-chrome "$uri"
+    fi
     # TODO: auto merge
 }
 
