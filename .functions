@@ -81,7 +81,19 @@ function colingo-ngenplus() {
 
 # TODO: write function
 function pr_github() {
+    if [[ ! -n "$1" ]]; then
+        echo "pr_github must be called with PR message"
+        return
+    fi
+
     local branch=${2:-master}
+
+    local status="$(git status | grep 'Changes to be committed')"
+
+    if [[ -n "$status" ]]; then
+        git commit -m "$1"
+    fi
+
     git push origin $branch
     echo git push origin $branch
     local uri="$(hub pull-request "$1" -h Raynos:$branch -b Colingo:$branch)"
