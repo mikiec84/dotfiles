@@ -79,27 +79,7 @@ function colingo-ngenplus() {
 
 ## Git and github work flows
 
-# TODO: write function
 function pr_github() {
-    # local text
-    # if [[ ! -n "$1" ]]; then
-        # tmpf = $(mktemp)
-
-        # echo "# Requesting a pull to Colingo:master from Raynos:master" >> tmpf
-        # echo "#" >> tmpf
-        # echo "# Write a message for this pull request. The first block" >> tmpf
-        # echo "# of text is the title and the rest is description." >> tmpf
-
-        # local editor=$EDITOR
-
-        # editor tmpf 3>&1 1>&2 2>&3
-
-        # text="$(cat tmpf)"
-        # # echo "got text $text"
-        # rm tmpf
-    # else
-    #     text="$1"
-    # fi
 
     local branch=${1:-master}
 
