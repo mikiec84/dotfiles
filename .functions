@@ -80,7 +80,6 @@ function colingo-ngenplus() {
 ## Git and github work flows
 
 function pr_github() {
-
     local branch=${1:-master}
 
     local status="$(git status | grep 'Changes to be committed')"
