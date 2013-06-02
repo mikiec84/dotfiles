@@ -122,8 +122,35 @@ function pr_github() {
 
 ## Test & testing work flows
 
+# file defaults to `./test`
+# usage: testem-node {{file}}
 function testem-node() {
-    testem --file="$HOME/testem/node.json"
+    local defaultEntry="./test"
+    local entry=${1:-$defaultEntry}
+    local tmpf=$(tempfile)
+    mv $tmpf "$tmpf.json"
+    local result="$tmpf.json"
+
+    # echo $result
+
+    echo '{' >> $result
+    echo '    "launchers": {' >> $result
+    echo '        "node": {' >> $result
+    echo "            \"command\": \"node $entry\"," >> $result
+    echo '            "protocol": "tap"' >> $result
+    echo '        }' >> $result
+    echo '    },' >> $result
+    echo '    "src_files": [' >> $result
+    echo '        "./**/*.js"' >> $result
+    echo '    ],' >> $result
+    echo '    "launch_in_dev": ["node"]' >> $result
+    echo '}' >> $result
+
+    # echo "$(cat $result)"
+    # echo testem --file="$result"
+
+    testem --file="$result"
+    rm $result
 }
 
 function testem-browser() {
