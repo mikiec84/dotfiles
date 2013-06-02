@@ -41,7 +41,7 @@ function ngenplus() {
     if [[ ! -n "$isFree" ]]; then
         echo "$projectName already taken on npm"
         npm info ${projectName} name description author
-        return
+        exit 1
     fi
 
     local fileLocation="$(pwd)/$2"c
@@ -67,7 +67,7 @@ function colingo-ngenplus() {
     if [[ ! -n "$isFree" ]]; then
         echo "$projectName already taken on npm"
         npm info ${projectName} name description author
-        return
+        exit 1
     fi
 
     local fileLocation="$(pwd)/$2"
@@ -87,6 +87,7 @@ function colingo-ngenplus() {
 
 function pr_github() {
     local branch=${1:-master}
+    local remote=${2:-github}
 
     local status="$(git status | grep 'Changes to be committed')"
 
@@ -98,9 +99,9 @@ function pr_github() {
     git push origin $branch
     echo git push origin $branch
     local result=$(tempfile)
-    hub pull-request -h Raynos:$branch -b Colingo:$branch 2>$result
+    hub pull-request -h origin/$branch -b $remote/$branch 2>$result
     local uri="$(cat $result)"
-    echo hub pull-request -h Raynos:$branch -b Colingo:$branch
+    echo hub pull-request -h origin/$branch -b $remote/$branch
     rm $result
 
     if [ "$uri" != "Aborting due to empty pull request title" ]
