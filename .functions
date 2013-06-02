@@ -15,7 +15,7 @@ function nstart() {
     travisify test
     testlingify
     testlingify test
-    npublish
+    npm publish
 }
 
 function colingo-nstart() {
@@ -28,7 +28,7 @@ function colingo-nstart() {
     travisify test
     testlingify
     testlingify test
-    npublish
+    npm publish
 }
 
 function ngenplus() {
