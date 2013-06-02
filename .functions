@@ -1,3 +1,5 @@
+PROJECT_ROOT="~/projects"
+
 ## NPM / repo scaffolds
 
 function npmify() {
@@ -46,7 +48,7 @@ function ngenplus() {
 
     local fileLocation="$(pwd)/$2"c
 
-    cd ~/projects
+    cd $PROJECT_ROOT
     ngen $1
     cd $1
 
@@ -72,7 +74,7 @@ function colingo-ngenplus() {
 
     local fileLocation="$(pwd)/$2"
 
-    cd ~/projects
+    cd $PROJECT_ROOT
     colingo-ngen $1
     cd $1
 
