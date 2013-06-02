@@ -107,17 +107,12 @@ function pr_github() {
 
 ## Test & testing work flows
 
-function relpath() {
-    python -c "import os.path; print os.path.relpath('$1','${2:-$PWD}')"
-}
-
 function testem-node() {
     testem --file="$HOME/testem/node.json"
 }
 
 function testem-browser() {
     local test_page="$HOME/testem/test-page.html"
-    local path="$(relpath $test_page)"
 
     testem --file="$HOME/testem/browser.json" \
         --test_page="$test_page"
