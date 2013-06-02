@@ -1,6 +1,9 @@
 {
     "launchers": {
-        "node": { "command": "node ./test" }
+        "node": {
+            "command": "node ./test",
+            "protocol": "tap"
+        }
     },
     "src_files": [
         "./**/*.js"
