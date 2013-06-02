@@ -3,7 +3,10 @@ PROJECT_ROOT="~/projects"
 ## NPM / repo scaffolds
 
 function npmify() {
-    ngenplus $1 $2
+    if [ ! ngenplus $1 $2 ]; then
+        echo "ngenplus failed"
+        exit 1
+    fi
     nstart
 }
 
@@ -48,7 +51,7 @@ function ngenplus() {
 
     local fileLocation="$(pwd)/$2"c
 
-    cd $PROJECT_ROOT
+    cd "$PROJECT_ROOT"
     ngen $1
     cd $1
 
@@ -74,7 +77,7 @@ function colingo-ngenplus() {
 
     local fileLocation="$(pwd)/$2"
 
-    cd $PROJECT_ROOT
+    cd "$PROJECT_ROOT"
     colingo-ngen $1
     cd $1
 
