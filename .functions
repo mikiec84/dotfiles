@@ -10,8 +10,11 @@ function nstart() {
     git add .
     git commit -m "initial"
     hub create Raynos/$(basename $PWD)
+    git push origin master
     travisify
     travisify test
+    testlingify
+    testlingify test
     npublish
 }
 
@@ -20,8 +23,11 @@ function colingo-nstart() {
     git add .
     git commit -m "initial"
     hub create Colingo/$(basename $PWD)
+    git push origin master
     travisify
     travisify test
+    testlingify
+    testlingify test
     npublish
 }
 
