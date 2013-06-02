@@ -9,7 +9,7 @@ function nstart() {
     git init
     git add .
     git commit -m "initial"
-    hub create Raynos/$(basename $PWD)
+    hub create $(basename $PWD)
     git push origin master
     travisify
     travisify test
