@@ -95,7 +95,6 @@ function colingo-ngenplus() {
 
 function pr_github() {
     local branch=${1:-master}
-    local remote=${2:-github}
 
     local status="$(git status | grep 'Changes to be committed')"
 
@@ -104,12 +103,20 @@ function pr_github() {
         git commit 3>&1 1>&2 2>&3
     fi
 
+    local origin="$(git remote -v | grep 'origin\s' | head -n 1 | awk '{ match($0, /git@github.com\:([_a-zA-Z]+)/); split(substr($0, RSTART, RLENGTH), a, /[":]/); print a[2] }')"
+    local github="$(git remote -v | grep 'github\s' | head -n 1 | awk '{ match($0, /git@github.com\:([_a-zA-Z]+)/); split(substr($0, RSTART, RLENGTH), a, /[":]/); print a[2] }')"
+
+    local remote=${2:-$github}
+
     git push origin $branch
     echo git push origin $branch
     local result=$(tempfile)
-    hub pull-request -h origin/$branch -b $remote/$branch 2>$result
+    hub pull-request -h $origin:$branch -b $remote:$branch 2>$result
+    echo "catting result"
+    cat $result
+    echo "result catted"
     local uri="$(cat $result)"
-    echo hub pull-request -h origin/$branch -b $remote/$branch
+    echo hub pull-request -h $origin:$branch -b $remote:$branch
     rm $result
 
     if [ "$uri" != "Aborting due to empty pull request title" ]
