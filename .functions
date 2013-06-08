@@ -132,8 +132,13 @@ function pr_github() {
 # file defaults to `./test`
 # usage: testem-node {{file}}
 function testem-node() {
-    local defaultEntry="./test"
-    local entry=${1:-$defaultEntry}
+    # local defaultEntry="./test"
+    local nodeCommand
+    if [ ! -z $1 ]; then
+        nodeCommand="node $1"
+    else
+        nodeCommand="npm test"
+    fi
     local tmpf=$(tempfile)
     mv $tmpf "$tmpf.json"
     local result="$tmpf.json"
@@ -143,7 +148,7 @@ function testem-node() {
     echo '{' >> $result
     echo '    "launchers": {' >> $result
     echo '        "node": {' >> $result
-    echo "            \"command\": \"node $entry\"," >> $result
+    echo "            \"command\": \"$nodeCommand\"," >> $result
     echo '            "protocol": "tap"' >> $result
     echo '        }' >> $result
     echo '    },' >> $result
