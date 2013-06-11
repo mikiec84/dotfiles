@@ -112,7 +112,7 @@ function pr_github() {
 
     if [ "$result" != "" ]; then
         echo "MERGE CONFLICT ;___;"
-        exit 1
+        return 1
     fi
 
     git push origin $branch
