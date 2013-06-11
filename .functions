@@ -108,8 +108,8 @@ function pr_github() {
 
     local remote=${2:-$github}
 
-    git pull $github $branch
-    git push $origin $branch
+    git pull github $branch
+    git push origin $branch
     echo git push $origin $branch
     exec 5>&1
     echo hub pull-request -h $origin:$branch -b $remote:$branch
