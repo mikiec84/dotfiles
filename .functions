@@ -108,7 +108,13 @@ function pr_github() {
 
     local remote=${2:-$github}
 
-    git pull github $branch
+    result="$(git pull github $branch | grep 'Merge conflict in')"
+
+    if [ "$result" != "" ]; then
+        echo "MERGE CONFLICT ;___;"
+        exit 1
+    fi
+
     git push origin $branch
     echo git push $origin $branch
     exec 5>&1
