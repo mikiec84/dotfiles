@@ -14,15 +14,33 @@ function npmify() {
 }
 
 function nstart() {
+    local testling=0
+    local travis=0
+
+    # dumb args parsing since I couldn't get getopts to work inside a function
+    # -a turns on travis, -s turns on testling
+    for v in $@
+    do
+      [[ $v == '-a' ]] && travis=1
+      [[ $v == '-s' ]] && testling=1
+    done
+
     git init
     git add .
     git commit -m "initial"
     hub create $(basename $PWD)
     git push origin master
-    travisify
-    travisify test
-    testlingify
-    testlingify test
+
+    if [[ $travis == 1 ]]; then
+        travisify
+        travisify test
+    fi
+
+    if [[ $testling == 1 ]]; then
+        testlingify
+        testlingify test
+    fi
+
     npm publish
 }
 
@@ -52,7 +70,7 @@ function ngenplus() {
         return 22
     fi
 
-    local fileLocation="$(pwd)/$2"c
+    local fileLocation="$(pwd)/$2"
 
     cd $PROJECT_ROOT
     ngen $1
