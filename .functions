@@ -150,10 +150,9 @@ function pr_github() {
 
 ## Test & testing work flows
 
-# file defaults to `./test`
+# file defaults to running the npm test command
 # usage: testem-node {{file}}
 function testem-node() {
-    # local defaultEntry="./test"
     local nodeCommand
     if [ ! -z $1 ]; then
         nodeCommand="node $1"
@@ -186,11 +185,35 @@ function testem-node() {
     rm $result
 }
 
+# file defaults to `./test/index.js`
+# usage: testem-browser {{file}}
 function testem-browser() {
+    local browserFile=${1:-"./test/index.js"}
+    local tmpf=$(tempfile)
+    mv $tmpf "$tmpf.json"
+    local result="$tmpf.json"
+
+    echo '{' >> $result
+    echo '    "src_files": [' >> $result
+    echo '        "./**/*.js"' >> $result
+    echo '    ],' >> $result
+    echo "    \"before_tests\": \"browserify $browserFile -o ~/testem/__bundle.js --debug\"," >> $result
+    echo '    "on_exit": "rm ~/testem/__bundle.js",' >> $result
+    echo '    "launch_in_dev": ["phantomjs"],' >> $result
+    echo '    "unsafe_file_serving": true,' >> $result
+    echo '    "routes": {' >> $result
+    echo '        "/.test-adapter.js": "/home/raynos/testem/test-adapter.js",' >> $result
+    echo '        "/.__bundle.js": "/home/raynos/testem/__bundle.js"' >> $result
+    echo '    }' >> $result
+    echo '}' >> $result
+
+    cat $result
+
     local test_page="$HOME/testem/test-page.html"
 
-    testem --file="$HOME/testem/browser.json" \
+    testem --file="$result" \
         --test_page="$test_page"
+    rm $result
 }
 
 function testem-both() {
