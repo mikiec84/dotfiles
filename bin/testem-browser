@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# file defaults to `./test/index.js`
+# usage: testem-browser {{file}}
+browserFile=${1:-"./test/index.js"}
+tmpf=$(tempfile)
+mv $tmpf "$tmpf.json"
+result="$tmpf.json"
+
+echo '{' >> $result
+echo '    "src_files": [' >> $result
+echo '        "./**/*.js"' >> $result
+echo '    ],' >> $result
+echo "    \"before_tests\": \"browserify $browserFile -o ~/testem/__bundle.js --debug\"," >> $result
+echo '    "on_exit": "rm ~/testem/__bundle.js",' >> $result
+echo '    "launch_in_dev": ["phantomjs"],' >> $result
+echo '    "unsafe_file_serving": true,' >> $result
+echo '    "routes": {' >> $result
+echo '        "/.test-adapter.js": "/home/raynos/testem/test-adapter.js",' >> $result
+echo '        "/.__bundle.js": "/home/raynos/testem/__bundle.js"' >> $result
+echo '    }' >> $result
+echo '}' >> $result
+
+# cat $result
+
+test_page="$HOME/testem/test-page.html"
+
+testem --file="$result" \
+    --test_page="$test_page"
+rm $result

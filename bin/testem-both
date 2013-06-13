@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+## Testem flow for both node & browsers
+# node defaults to running the npm test command
+# browser defaults to `./test/index.js`
+# usage: testem-both --node={{file}} --browser={{file}}
+
+nodeCommand="npm test"
+browserFile="./test/index.js"
+
+for i in "$@"
+do
+case $i in
+    -n=*|--node=*)
+    nodeCommand="$i"
+    ;;
+    -b=*|--browser=*)
+    browserFile="$i"
+    ;;
+esac
+done
+
+tmpf=$(tempfile)
+mv $tmpf "$tmpf.json"
+result="$tmpf.json"
+test_page="$HOME/testem/test-page.html"
+
+# echo $result
+
+echo '{' >> $result
+echo '    "launchers": {' >> $result
+echo '        "node": {' >> $result
+echo "            \"command\": \"$nodeCommand\"," >> $result
+echo '            "protocol": "tap"' >> $result
+echo '        }' >> $result
+echo '    },' >> $result
+echo "    \"before_tests\": \"browserify $browserFile -o ~/testem/__bundle.js --debug\"," >> $result
+echo '    "on_exit": "rm ~/testem/__bundle.js",' >> $result
+echo '    "unsafe_file_serving": true,' >> $result
+echo '    "routes": {' >> $result
+echo '        "/.test-adapter.js": "/home/raynos/testem/test-adapter.js",' >> $result
+echo '        "/.__bundle.js": "/home/raynos/testem/__bundle.js"' >> $result
+echo '    }' >> $result
+echo '    "src_files": [' >> $result
+echo '        "./**/*.js"' >> $result
+echo '    ],' >> $result
+echo '    "launch_in_dev": ["node", "phantomjs"]' >> $result
+echo '}' >> $result
+
+echo "$(cat $result)"
+
+echo testem --file="$result" --test_page="$test_page"
+testem --file="$result" --test_page="$test_page"
+rm $result
