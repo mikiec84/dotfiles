@@ -108,6 +108,7 @@ function pr_github() {
 
     local remote=${2:-$github}
 
+    git fetch github
     result="$(git pull github $branch | grep 'Merge conflict in')"
 
     if [ "$result" != "" ]; then
