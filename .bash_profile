@@ -36,7 +36,7 @@ done
 if [ -e ~/projects/nvm ]; then
     . ~/projects/nvm/nvm.sh
     # Tell nvm to use the latest node 0.8 branch
-    nvm use v0.8.23
+    nvm use v0.11.2
 fi
 
 # {{{

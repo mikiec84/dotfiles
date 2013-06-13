@@ -14,15 +14,33 @@ function npmify() {
 }
 
 function nstart() {
+    local testling=0
+    local travis=0
+
+    # dumb args parsing since I couldn't get getopts to work inside a function
+    # -a turns on travis, -s turns on testling
+    for v in $@
+    do
+      [[ $v == '-a' ]] && travis=1
+      [[ $v == '-s' ]] && testling=1
+    done
+
     git init
     git add .
     git commit -m "initial"
     hub create $(basename $PWD)
     git push origin master
-    travisify
-    travisify test
-    testlingify
-    testlingify test
+
+    if [[ $travis == 1 ]]; then
+        travisify
+        travisify test
+    fi
+
+    if [[ $testling == 1 ]]; then
+        testlingify
+        testlingify test
+    fi
+
     npm publish
 }
 
@@ -52,7 +70,7 @@ function ngenplus() {
         return 22
     fi
 
-    local fileLocation="$(pwd)/$2"c
+    local fileLocation="$(pwd)/$2"
 
     cd $PROJECT_ROOT
     ngen $1
@@ -129,55 +147,6 @@ function pr_github() {
         # google-chrome "$uri"
     # fi
     # TODO: auto merge
-}
-
-## Test & testing work flows
-
-# file defaults to `./test`
-# usage: testem-node {{file}}
-function testem-node() {
-    # local defaultEntry="./test"
-    local nodeCommand
-    if [ ! -z $1 ]; then
-        nodeCommand="node $1"
-    else
-        nodeCommand="npm test"
-    fi
-    local tmpf=$(tempfile)
-    mv $tmpf "$tmpf.json"
-    local result="$tmpf.json"
-
-    # echo $result
-
-    echo '{' >> $result
-    echo '    "launchers": {' >> $result
-    echo '        "node": {' >> $result
-    echo "            \"command\": \"$nodeCommand\"," >> $result
-    echo '            "protocol": "tap"' >> $result
-    echo '        }' >> $result
-    echo '    },' >> $result
-    echo '    "src_files": [' >> $result
-    echo '        "./**/*.js"' >> $result
-    echo '    ],' >> $result
-    echo '    "launch_in_dev": ["node"]' >> $result
-    echo '}' >> $result
-
-    # echo "$(cat $result)"
-    # echo testem --file="$result"
-
-    testem --file="$result"
-    rm $result
-}
-
-function testem-browser() {
-    local test_page="$HOME/testem/test-page.html"
-
-    testem --file="$HOME/testem/browser.json" \
-        --test_page="$test_page"
-}
-
-function testem-both() {
-    testem --file="$HOME/testem/both.json"
 }
 
 ## Utils
