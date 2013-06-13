@@ -35,8 +35,9 @@ done
 # Run nvm so that it's accessible
 if [ -e ~/projects/nvm ]; then
     . ~/projects/nvm/nvm.sh
+    node_version=${NVM_NODE_VERSION:-"v0.11.2"}
     # Tell nvm to use the latest node 0.8 branch
-    nvm use v0.11.2
+    nvm use $node_version
 fi
 
 # {{{

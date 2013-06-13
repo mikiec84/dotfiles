@@ -13,9 +13,10 @@ function npmify() {
     nstart
 }
 
-function nstart() {
+function __nstart() {
     local testling=0
     local travis=0
+    local repoName=$1
 
     # dumb args parsing since I couldn't get getopts to work inside a function
     # -a turns on travis, -s turns on testling
@@ -28,7 +29,7 @@ function nstart() {
     git init
     git add .
     git commit -m "initial"
-    hub create $(basename $PWD)
+    hub create $repoName
     git push origin master
 
     if [[ $travis == 1 ]]; then
@@ -44,21 +45,17 @@ function nstart() {
     npm publish
 }
 
-function colingo-nstart() {
-    git init
-    git add .
-    git commit -m "initial"
-    hub create Colingo/$(basename $PWD)
-    git push origin master
-    travisify
-    travisify test
-    testlingify
-    testlingify test
-    npm publish
+function nstart() {
+    __nstart "$(basename $PWD)" "$@"
 }
 
-function ngenplus() {
-    local projectName=$1
+function colingo-nstart() {
+    __nstart "Colingo/$(basename $PWD)" "$@"
+}
+
+function __ngenplus() {
+    local scaffold=$1
+    local projectName=$2
     local isFree=""
 
     isFree="$(npm info $projectName 2>&1 | grep 'npm ERR! 404 You should bug the author to publish it')"
@@ -70,43 +67,30 @@ function ngenplus() {
         return 22
     fi
 
-    local fileLocation="$(pwd)/$2"
+    local tmpf=$(tempfile)
+
+    if [ ! -z $3 ]; then
+        cp "$3" $tmpf
+    fi
 
     cd $PROJECT_ROOT
-    ngen $1
-    cd $1
+    $scaffold $projectName
+    cd $projectName
 
-    if [ ! -z $2 ]; then
-        cp "$fileLocation" ./index.js
+    if [ ! -z $3 ]; then
+        cp "$tmpf" ./index.js
+        rm $tmpf
     fi
 
     npm i
 }
 
+function ngenplus() {
+    __ngenplus "ngen" $1 $2
+}
+
 function colingo-ngenplus() {
-    local projectName=$1
-    local isFree=""
-
-    isFree="$(npm info $projectName 2>&1 | grep 'npm ERR! 404 You should bug the author to publish it')"
-
-    # if $isFree is empty then BAD. If it's not empty then GOOD
-    if [[ ! -n "$isFree" ]]; then
-        echo "$projectName already taken on npm"
-        npm info ${projectName} name description author
-        exit 1
-    fi
-
-    local fileLocation="$(pwd)/$2"
-
-    cd $PROJECT_ROOT
-    colingo-ngen $1
-    cd $1
-
-    if [ ! -z $2 ]; then
-        cp "$fileLocation" ./index.js
-    fi
-
-    npm i
+    __ngenplus "colingo-ngen" $1 $2
 }
 
 ## Git and github work flows

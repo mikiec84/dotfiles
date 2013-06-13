@@ -4,7 +4,7 @@
 
 # file defaults to running the npm test command
 # usage: testem-node {{file}}
-nodeCommand
+nodeCommand=""
 if [ ! -z $1 ]; then
     nodeCommand="node $1"
 else
