@@ -95,6 +95,17 @@ function colingo-ngenplus() {
 
 ## Git and github work flows
 
+# ENSURE that you have hub installed locally.
+# Opens a pull request from your origin remote to another
+# remote on a branch on github.
+# Will open up a git style editor for the pull request message
+# body.
+# the branch defaults to the checked out branch. To change it
+# pass in $1.
+# the remote defaults to the named remote github. To change it
+# pass in $2. ENSURE that the remote is a github username and not
+# a git remote.
+# pr_github ${BRANCH} ${REMOTE}
 function pr_github() {
     local branch="${1:-$(git rev-parse --abbrev-ref HEAD)}"
 
