@@ -13,6 +13,7 @@ function npmify() {
     nstart
 }
 
+# Deals with not disk
 function __nstart() {
     local testling=0
     local travis=0
@@ -26,17 +27,21 @@ function __nstart() {
       [[ $v == '-s' ]] && testling=1
     done
 
+    # deals with git
     git init
     git add .
     git commit -m "initial"
+    # deals with github
     hub create $repoName
     git push origin master
 
+    # deals with travis
     if [[ $travis == 1 ]]; then
         travisify
         travisify test
     fi
 
+    # deals with testling
     if [[ $testling == 1 ]]; then
         testlingify
         testlingify test
