@@ -121,8 +121,8 @@ function pr_github() {
         git commit 3>&1 1>&2 2>&3
     fi
 
-    local origin="$(git remote -v | grep 'origin\s' | head -n 1 | awk '{ match($0, /git@github.com\:([_a-zA-Z]+)/); split(substr($0, RSTART, RLENGTH), a, /[":]/); print a[2] }')"
-    local github="$(git remote -v | grep 'github\s' | head -n 1 | awk '{ match($0, /git@github.com\:([_a-zA-Z]+)/); split(substr($0, RSTART, RLENGTH), a, /[":]/); print a[2] }')"
+    local origin="$(git remote -v | grep 'origin\s' | head -n 1 | awk '{ match($0, /git@github.com\:([-_a-zA-Z]+)/); split(substr($0, RSTART, RLENGTH), a, /[":]/); print a[2] }')"
+    local github="$(git remote -v | grep 'github\s' | head -n 1 | awk '{ match($0, /git@github.com\:([-_a-zA-Z]+)/); split(substr($0, RSTART, RLENGTH), a, /[":]/); print a[2] }')"
 
     local remote=${2:-$github}
 
