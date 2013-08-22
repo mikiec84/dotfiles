@@ -26,6 +26,7 @@ echo '    },' >> $result
 echo '    "src_files": [' >> $result
 echo '        "./**/*.js"' >> $result
 echo '    ],' >> $result
+echo '    "src_files_ignore": "./coverage",' >> $result
 echo '    "launch_in_dev": ["node"]' >> $result
 echo '}' >> $result
 
