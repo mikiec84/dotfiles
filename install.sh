@@ -12,6 +12,6 @@ if [ ! -e ~/projects/z ]; then
 fi
 
 # Initialize sublime settings
-ln -s ~/dotfiles/sublime/User ~/.config/sublime-text3/Packages/User
-ln -s ~/dotfiles/sublime/JavaScriptNext ~/.config/sublime-text3/Packages/JavaScriptNext
-ln -s ~/dotfiles/sublime/SublimeLinter ~/.config/sublime-text3/Package/SublimeLinter
+ln -s ~/dotfiles/sublime/User ~/.config/sublime-text-3/Packages/User
+ln -s ~/dotfiles/sublime/JavaScriptNext ~/.config/sublime-text-3/Packages/JavaScriptNext
+ln -s ~/dotfiles/sublime/SublimeLinter ~/.config/sublime-text-3/Packages/SublimeLinter
