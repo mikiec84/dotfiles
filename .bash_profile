@@ -35,19 +35,7 @@ done
 # Run nvm so that it's accessible
 if [ -e ~/projects/nvm ]; then
     . ~/projects/nvm/nvm.sh
-    node_version=${NVM_NODE_VERSION:-"v0.11.3"}
+    node_version=${NVM_NODE_VERSION:-"v0.10.22"}
     # Tell nvm to use the latest node 0.8 branch
     nvm use $node_version
 fi
-
-# {{{
-# Hand modified >_<
-# Node Completion - Auto-generated, do not touch.
-if [ -e ~/.node-completion ]; then
-    shopt -s progcomp
-    for f in $(command ls ~/.node-completion); do
-        f="$HOME/.node-completion/$f"
-        test -f "$f" && . "$f"
-    done
-fi
-# }}}
