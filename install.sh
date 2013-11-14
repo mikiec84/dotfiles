@@ -12,6 +12,16 @@ if [ ! -e ~/projects/z ]; then
 fi
 
 # Initialize sublime settings
-ln -s ~/dotfiles/sublime/User ~/.config/sublime-text-3/Packages/User
-ln -s ~/dotfiles/sublime/JavaScriptNext ~/.config/sublime-text-3/Packages/JavaScriptNext
-ln -s ~/dotfiles/sublime/SublimeLinter ~/.config/sublime-text-3/Packages/SublimeLinter
+files=(User JavaScriptNext SublimeLinter DotFilesSyntaxHighlighting)
+
+for file in ${files[@]}; do
+    target=~/.config/sublime-text-3/Packages/$file
+
+    if ([ -e $target ] && [ ! -L $target ]); then
+        rm -rf $target
+    fi
+
+    if [ ! -L $target ]; then
+        ln -s ~/dotfiles/sublime/$file $target
+    fi
+done

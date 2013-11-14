@@ -1,0 +1,37 @@
+{
+	"extensions":
+	[
+		".ackrc",
+		".aliases",
+		".bash_profile",
+		".bash_prompt",
+		".bashrc",
+		".brew",
+		".curlrc",
+		".exports",
+		".extra",
+		".functions",
+		".git",
+		".gitattributes",
+		".gitconfig",
+		".gitignore",
+		".hushlogin",
+		".inputrc",
+		".nanorc",
+		".npmrc",
+		".osx",
+		".packages",
+		".path",
+		".pkginit",
+		".screenrc",
+		".symlink",
+		".zlogin",
+		".zlogout",
+		".zprofile",
+		".zshenv",
+		".zshrc",
+		".xsessionrc",
+		".wgetrc",
+		"symlink"
+	]
+}
