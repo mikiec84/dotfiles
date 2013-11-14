@@ -2,6 +2,8 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
 	pgm = pull github master
 	pom = pull origin master
+	pgi = pull github integration
+	poi = pull origin integration
 
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
