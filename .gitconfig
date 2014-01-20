@@ -5,6 +5,10 @@
 	pgi = pull github integration
 	poi = pull origin integration
 
+	unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+
+	merged = !git branch -r --merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
+
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
@@ -38,6 +42,8 @@
 	merge = refs/heads/master
 
 # URL shorthands
+[url "gitolite@code.uber.internal:"]
+	insteadOf = "gito:"
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
