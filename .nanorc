@@ -1,2 +1,4 @@
 # set tab size to 4 for NANO
 set tabsize 4
+
+include /Users/jakev/.nano/syntax.nanorc
