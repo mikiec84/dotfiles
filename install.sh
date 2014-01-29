@@ -14,14 +14,22 @@ fi
 # Initialize sublime settings
 files=(User JavaScriptNext SublimeLinter DotFilesSyntaxHighlighting)
 
-for file in ${files[@]}; do
-    target=~/.config/sublime-text-3/Packages/$file
+targetPrefix=''
 
-    if ([ -e $target ] && [ ! -L $target ]); then
-        rm -rf $target
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    targetPrefix='~/Library/Application\ Support/Sublime\ Text\ 3/Packages'
+else
+    targetPrefix='~/.config/sublime-text-3/Packages'
+fi
+
+for file in ${files[@]}; do
+    target='$targetPrefix/$file'
+
+    if ([ -e '$target' ] && [ ! -L '$target' ]); then
+        rm -rf '$target'
     fi
 
-    if [ ! -L $target ]; then
-        ln -s ~/dotfiles/sublime/$file $target
+    if [ ! -L '$target' ]; then
+        ln -s ~/dotfiles/sublime/$file '$target'
     fi
 done
