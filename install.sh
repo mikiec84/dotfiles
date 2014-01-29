@@ -12,7 +12,7 @@ if [ ! -e ~/projects/z ]; then
 fi
 
 # Initialize sublime settings
-files=(User JavaScriptNext SublimeLinter DotFilesSyntaxHighlighting)
+files=(User DotFilesSyntaxHighlighting)
 
 targetPrefix=''
 
