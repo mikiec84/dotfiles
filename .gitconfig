@@ -4,6 +4,7 @@
 	pom = pull origin master
 	pgi = pull github integration
 	poi = pull origin integration
+	dc = diff --cached
 
 	unmerged = !git branch -r --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
 
