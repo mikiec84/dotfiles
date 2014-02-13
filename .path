@@ -2,3 +2,5 @@
 export PATH="$HOME/bin:$PATH"
 # Add node_modules to path
 export PATH="node_modules/.bin:$PATH"
+# Add `~/.local/bin` to the `$PATH`
+export PATH="$HOME/.local/bin:$PATH"
