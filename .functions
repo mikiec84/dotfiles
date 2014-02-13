@@ -156,3 +156,6 @@ function set_terminal_title() {
     PROMPT_COMMAND='echo -ne "\033]0;${___TERMINAL_TITLE}\007"'
 }
 
+function pygless() {
+    LESSOPEN="| pygmentize -f terminal256 -O style=native -g %s" less -R "$@";
+}
