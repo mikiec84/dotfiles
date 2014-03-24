@@ -39,3 +39,8 @@ if [ -e ~/projects/nvm ]; then
     # Tell nvm to use the latest node 0.8 branch
     nvm use $node_version
 fi
+
+# Add git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
