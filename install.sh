@@ -12,24 +12,24 @@ if [ ! -e ~/projects/z ]; then
 fi
 
 # Initialize sublime settings
-files=(User DotFilesSyntaxHighlighting)
+# files=(User DotFilesSyntaxHighlighting)
 
 targetPrefix=''
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    targetPrefix='~/Library/Application\ Support/Sublime\ Text\ 3/Packages'
-else
-    targetPrefix='~/.config/sublime-text-3/Packages'
-fi
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+#     targetPrefix='~/Library/Application\ Support/Sublime\ Text\ 3/Packages'
+# else
+#     targetPrefix='~/.config/sublime-text-3/Packages'
+# fi
 
-for file in ${files[@]}; do
-    target='$targetPrefix/$file'
+# for file in ${files[@]}; do
+#     target='$targetPrefix/$file'
 
-    if ([ -e '$target' ] && [ ! -L '$target' ]); then
-        rm -rf '$target'
-    fi
+#     if ([ -e '$target' ] && [ ! -L '$target' ]); then
+#         rm -rf '$target'
+#     fi
 
-    if [ ! -L '$target' ]; then
-        ln -s ~/dotfiles/sublime/$file '$target'
-    fi
-done
+#     if [ ! -L '$target' ]; then
+#         ln -s ~/dotfiles/sublime/$file '$target'
+#     fi
+# done
