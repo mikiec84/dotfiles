@@ -7,6 +7,8 @@
 	dc = diff --cached
 	a = add --all
 
+	up = !git remote update -p; git merge --ff-only @{u}
+
 	unmerged = !git branch --no-merged | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
 
 	merged = !git branch --merged | grep -v master | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
