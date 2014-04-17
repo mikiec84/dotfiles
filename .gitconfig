@@ -13,6 +13,8 @@
 
 	merged = !git branch --merged | grep -v master | grep -v HEAD | xargs -L1 git --no-pager log --pretty=tformat:'%Cgreen%d%Creset - %h by %an (%Cblue%ar%Creset)' -1
 
+	ffm = "!f() { git fetch --all; git merge --ff-only $1; }; f"
+
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
