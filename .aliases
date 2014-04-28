@@ -6,3 +6,4 @@ alias nodeprod="NODE_ENV=production node $1"
 alias ntest="NODE_ENV=test npm test"
 alias npmcov="npm run cover && npm run view-cover"
 alias gpublish="npm version patch && git push origin master --tags"
+alias npmrun='npm -s run'
