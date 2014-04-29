@@ -5,31 +5,50 @@ if [ ! -e ~/projects ]; then
     mkdir ~/projects
 fi
 
-# install z
-if [ ! -e ~/projects/z ]; then
-    cd ~/projects
-    git clone git@github.com:rupa/z
+
+# Configure git
+if ( ! git config --global user.email 1>/dev/null ); then
+	git config --global user.email "raynos2@gmail.com"
 fi
 
-# Initialize sublime settings
-# files=(User DotFilesSyntaxHighlighting)
+if ( ! git config --global user.name 1>/dev/null ); then
+	git config --global user.name "Raynos"
+fi
 
-targetPrefix=''
+echo ""
+echo "Checking rupa/z"
 
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#     targetPrefix='~/Library/Application\ Support/Sublime\ Text\ 3/Packages'
-# else
-#     targetPrefix='~/.config/sublime-text-3/Packages'
-# fi
+# install z
+if [ ! -e ~/projects/z ]; then
+	echo " - Fetching rupa/z"
+    cd ~/projects
+    git clone git@github.com:rupa/z
+else
+	echo " - Already installed rupa/z"
+fi
 
-# for file in ${files[@]}; do
-#     target='$targetPrefix/$file'
+echo ""
+echo "Checking Chrome"
 
-#     if ([ -e '$target' ] && [ ! -L '$target' ]); then
-#         rm -rf '$target'
-#     fi
+if ( hash google-chrome 2>/dev/null ); then
+	echo " - Already installed Chrome"
+else
+	echo " - Fetching Chrome"
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo dpkg -i google-chrome*.deb
+fi
 
-#     if [ ! -L '$target' ]; then
-#         ln -s ~/dotfiles/sublime/$file '$target'
-#     fi
-# done
+echo ""
+echo "Checking Sublime Text 3"
+
+if ( hash subl 2>/dev/null ); then
+	echo " - Already installed Sublime Text 3"
+else
+	echo " - Fetching Sublime Text 3"
+	sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+	sudo apt-get update
+	sudo apt-get install -y sublime-text-installer
+fi
+
+echo ""
+echo "All finished"
