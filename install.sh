@@ -1,6 +1,6 @@
 # create projects folder
 if [ ! -e ~/projects ]; then
-    mkdir ~/projects
+	mkdir ~/projects
 fi
 
 if [ ! -e ~/.extra ]; then
@@ -49,8 +49,8 @@ echo "Checking rupa/z"
 # install z
 if [ ! -e ~/projects/z ]; then
 	echo " - Fetching rupa/z"
-    cd ~/projects
-    git clone git@github.com:rupa/z
+	cd ~/projects
+	git clone git@github.com:rupa/z
 else
 	echo " - Already installed rupa/z"
 fi
