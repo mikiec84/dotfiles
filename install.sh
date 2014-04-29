@@ -3,15 +3,34 @@ if [ ! -e ~/projects ]; then
     mkdir ~/projects
 fi
 
+if [ ! -e ~/.extra ]; then
+	touch ~/.extra
+fi
+
+echo ""
+echo "Configuring git email & name"
 
 # Configure git
 if ( ! git config --global user.email 1>/dev/null ); then
+	echo " - Setting global user.email"
 	git config --global user.email "raynos2@gmail.com"
 fi
 
+if ( ! grep 'git config --global user.email' 1>/dev/null 2>/dev/null ~/.extra ); then
+	echo " - Storing global user.email in ~/.extra"
+	echo "git config --global user.email 'raynos2@gmail.com'" >> ~/.extra
+fi
+
 if ( ! git config --global user.name 1>/dev/null ); then
+	echo " - Setting global user.name"
 	git config --global user.name "Raynos"
 fi
+
+if ( ! grep 'git config --global user.name' 1>/dev/null 2>/dev/null ~/.extra ); then
+	echo " - Storing global user.name in ~/.extra"
+	echo "git config --global user.name 'Raynos'" >> ~/.extra
+fi
+
 
 echo ""
 echo "Checking curl"
