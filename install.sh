@@ -1,5 +1,3 @@
-cd ~
-
 # create projects folder
 if [ ! -e ~/projects ]; then
     mkdir ~/projects
@@ -16,6 +14,17 @@ if ( ! git config --global user.name 1>/dev/null ); then
 fi
 
 echo ""
+echo "Checking curl"
+
+
+if ( hash curl 2>/dev/null ); then
+	echo " - Already installed curl"
+else
+	echo " - Fetching curl"
+	sudo apt-get install curl
+fi
+
+echo ""
 echo "Checking rupa/z"
 
 # install z
@@ -26,6 +35,31 @@ if [ ! -e ~/projects/z ]; then
 else
 	echo " - Already installed rupa/z"
 fi
+
+echo ""
+echo "Checking creationix/nvm"
+
+if [ ! -e ~/projects/nvm ]; then
+	echo " - Fetching creationix/nvm"
+	cd ~/projects
+	git clone git@github.com:creationix/nvm
+	. ./nvm/nvm.sh
+else
+	echo " - Already installed creationix/nvm"
+fi
+
+echo ""
+echo "Checking node@0.10.26"
+
+if [ "$(node -v 2>/dev/null)" != "v0.10.26" ]; then
+	echo " - Fetching node@0.10.26"
+	. ~/projects/nvm/nvm.sh
+	nvm install v0.10.26
+	nvm use v0.10.26
+else
+	echo " - Already installed node@0.10.26";
+fi
+
 
 echo ""
 echo "Checking Chrome"
