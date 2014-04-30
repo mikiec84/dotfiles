@@ -1,3 +1,6 @@
 [submodule ".nano"]
 	path = .nano
 	url = gh:scopatz/nanorc
+[submodule ".config/sublime-text-3/Packages/Theme - Nexus"]
+	path = .config/sublime-text-3/Packages/Theme - Nexus
+	url = gh:Raynos/nexus-theme
