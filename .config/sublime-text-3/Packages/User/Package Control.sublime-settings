@@ -1,6 +1,8 @@
 {
 	"installed_packages":
 	[
+		"GitGutter",
+		"JavaScriptNext - ES6 Syntax",
 		"Themr"
 	]
 }
