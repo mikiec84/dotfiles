@@ -114,4 +114,14 @@ else
 fi
 
 echo ""
+echo "Checking pygmentize"
+
+if ( hash pygmentize 2>/dev/null ); then
+	echo " - Already installed pygmentize"
+else
+	echo " - Fetching pygmentize"
+	sudo apt-get install python-pygments
+fi
+
+echo ""
 echo "All finished"
