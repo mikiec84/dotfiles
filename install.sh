@@ -104,4 +104,14 @@ else
 fi
 
 echo ""
+echo "Checking terminator"
+
+if ( hash terminator 2>/dev/null ); then
+	echo " - Already installed Terminator"
+else
+	echo " - Fetching terminator"
+	sudo apt-get install terminator
+fi
+
+echo ""
 echo "All finished"

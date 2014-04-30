@@ -1,0 +1,21 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_type = transparent
+    background_image = None
+    foreground_color = "#ffffff"
+    font = Monospace 16
+    background_color = "#300a24"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
+
