@@ -2,7 +2,9 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
+		"Dotfiles Syntax Highlighting",
 		"Git",
+		"GitGutter",
 		"GotoOpenFile",
 		"HTML5",
 		"JavaScriptNext - ES6 Syntax",
