@@ -1,8 +1,13 @@
 {
 	"installed_packages":
 	[
-		"GitGutter",
+		"All Autocomplete",
+		"Git",
+		"GotoOpenFile",
+		"HTML5",
 		"JavaScriptNext - ES6 Syntax",
+		"LESS",
+		"SideBarEnhancements",
 		"Themr"
 	]
 }
