@@ -4,6 +4,3 @@
 [submodule ".config/sublime-text-3/Packages/Theme - Nexus"]
 	path = .config/sublime-text-3/Packages/Theme - Nexus
 	url = gh:Raynos/nexus-theme
-[submodule ".config/sublime-text-3/Packages/GitGutter"]
-	path = .config/sublime-text-3/Packages/GitGutter
-	url = gh:jisaacks/GitGutter
