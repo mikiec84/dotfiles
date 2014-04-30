@@ -10,6 +10,8 @@
 		"JavaScriptNext - ES6 Syntax",
 		"LESS",
 		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
 		"Themr"
 	]
 }
