@@ -6,6 +6,7 @@
 	poi = pull origin integration
 	dc = diff --cached
 	a = add --all
+	redo = git reset --mixed HEAD~1
 
 	up = !git remote update -p; git merge --ff-only @{u}
 
