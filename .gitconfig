@@ -7,6 +7,8 @@
 	dc = diff --cached
 	a = add --all
 	redo = reset --mixed HEAD~1
+	cim = commit -m
+	ciam = commit -a -m
 
 	up = !git remote update -p; git merge --ff-only @{u}
 
