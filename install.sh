@@ -138,6 +138,16 @@ else
 fi
 
 echo ""
+echo "Checking g++"
+
+if ( hash g++ 2>/dev/null ); then
+    echo " - Already installed g++"
+else 
+    echo " - Fetching g++"
+    sudo apt-get install g++
+fi
+
+echo ""
 echo "Install sublime package control"
 
 if [ ! -e ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package ]; then
