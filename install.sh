@@ -150,6 +150,24 @@ else
 fi
 
 echo ""
+echo "Install node"
+
+if ( which /usr/local/bin/node 1>/dev/null ); then
+    echo " - Already installed node"
+else
+    echo " - Fetching node"
+    cd ~/projects
+    wget "http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz"
+    tar -zxvf node-v0.10.28.tar.gz
+    cd node-v0.10.28
+    ./configure
+    make -j 5
+    sudo make install
+    cd ..
+    rm node-v0.10.28.tar.gz
+fi
+
+echo ""
 echo "Checking nano"
 
 function __install_nano() {
