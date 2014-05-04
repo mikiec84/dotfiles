@@ -150,6 +150,33 @@ else
 fi
 
 echo ""
+echo "Checking nano"
+
+function __install_nano() {
+    echo " - Fetching nano"
+    sudo apt-get install libncurses5-dev
+    cd ~/projects
+    wget "http://www.nano-editor.org/dist/v2.3/nano-2.3.2.tar.gz"
+    tar -zxvf nano-2.3.2.tar.gz
+    cd nano-2.3.2
+    ./configure
+    make
+    sudo make install
+    cd ..
+    rm nano-2.3.2.tar.gz
+}
+
+if ( hash nano 2>/dev/null ); then
+    if ( nano -V | grep "2.3.2" 1>/dev/null ); then
+        echo " - Already installed nano"
+    else 
+        __install_nano
+    fi
+else
+    __install_nano
+fi
+
+echo ""
 echo "Install sublime package control"
 
 if [ ! -e ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package ]; then
