@@ -1,4 +1,6 @@
 # create projects folder
+set -e
+
 if [ ! -e ~/projects ]; then
     mkdir ~/projects
 fi
@@ -153,7 +155,7 @@ echo "Install sublime package control"
 if [ ! -e ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package ]; then
     echo  " - Fetching sublime package control"
     cd ~/.config/sublime-text-3/Installed\ Packages
-    wget "https://sublime.wbond.net/Package%20Control.sublime-package"    
+    wget "https://sublime.wbond.net/Package%20Control.sublime-package"
 else 
     echo " - Already installed sublime package control"
 fi
