@@ -8,6 +8,30 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/indexhtmlify"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/virtual-hyperscript"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/frp-keyboard"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/xhr"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/jsig"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/error"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/dom-delegator"
 		}
 	]
 }

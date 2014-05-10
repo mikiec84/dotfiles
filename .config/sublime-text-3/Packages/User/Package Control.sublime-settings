@@ -9,8 +9,10 @@
 		"HTML5",
 		"JavaScriptNext - ES6 Syntax",
 		"LESS",
+		"Load file to REPL",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
+		"SublimeREPL",
 		"Themr"
 	]
 }
