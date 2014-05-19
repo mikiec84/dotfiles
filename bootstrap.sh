@@ -11,6 +11,8 @@ function doIt() {
     --exclude "install.sh" \
     --exclude "sync-sublime.sh" \
     --exclude "projects.sh" \
+    --exclude "ubuntu.sh" \
+    --exclude "ubuntu-wallpaper.jpg" \
     -av --no-perms . ~
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
