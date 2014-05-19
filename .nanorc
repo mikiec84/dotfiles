@@ -1,3 +1,7 @@
+set const
+set tabsize 4
+set tabstospaces
+
 include ~/.nano/apacheconf.nanorc
 include ~/.nano/asciidoc.nanorc
 include ~/.nano/asm.nanorc
