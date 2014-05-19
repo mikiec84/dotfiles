@@ -10,6 +10,7 @@ function doIt() {
     --exclude "init.sh" \
     --exclude "install.sh" \
     --exclude "sync-sublime.sh" \
+    --exclude "projects.sh" \
     -av --no-perms . ~
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
