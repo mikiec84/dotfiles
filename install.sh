@@ -15,22 +15,24 @@ echo "Configuring git email & name"
 # Configure git
 if ( ! git config --global user.email 1>/dev/null ); then
     echo " - Setting global user.email"
-    git config --global user.email "raynos2@gmail.com"
+    read -p "Please enter email: " email
+    git config --global user.email "$email"
 fi
 
 if ( ! grep 'git config --global user.email' 1>/dev/null 2>/dev/null ~/.extra ); then
     echo " - Storing global user.email in ~/.extra"
-    echo "git config --global user.email 'raynos2@gmail.com'" >> ~/.extra
+    echo "git config --global user.email '$email'" >> ~/.extra
 fi
 
 if ( ! git config --global user.name 1>/dev/null ); then
     echo " - Setting global user.name"
-    git config --global user.name "Raynos"
+    read -p "Please enter username: " username
+    git config --global user.name "$username"
 fi
 
 if ( ! grep 'git config --global user.name' 1>/dev/null 2>/dev/null ~/.extra ); then
     echo " - Storing global user.name in ~/.extra"
-    echo "git config --global user.name 'Raynos'" >> ~/.extra
+    echo "git config --global user.name '$username'" >> ~/.extra
 fi
 
 
@@ -199,11 +201,20 @@ echo "Install sublime package control"
 
 if [ ! -e ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package ]; then
     echo  " - Fetching sublime package control"
+    if [ ! -e ~/.config/sublime-text-3/Installed\ Packages ]; then
+        mkdir ~/.config/sublime-text-3/Installed\ Packages
+    fi    
+
     cd ~/.config/sublime-text-3/Installed\ Packages
     wget "https://sublime.wbond.net/Package%20Control.sublime-package"
 else 
     echo " - Already installed sublime package control"
 fi
+
+echo ""
+echo "Sourching bootstrap.sh"
+
+source ~/projects/dotfiles/bootstrap.sh
 
 echo ""
 echo "All finished"
