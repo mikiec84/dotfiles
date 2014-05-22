@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/playdoh"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/playdoh-server"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/logger"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/npm-shrinkwrap"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/graphite-dash-gen"
+		}
+	]
+}
