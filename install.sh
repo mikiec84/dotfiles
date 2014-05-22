@@ -170,6 +170,20 @@ else
 fi
 
 echo ""
+echo "Checking npm@1.4.10"
+
+if ( hash npm 2>/dev/null ); then
+    if ( npm -v | grep "1.4.10" 1>/dev/null ); then
+        echo " - Already installed npm"
+    else
+        npm i npm@1.4.10 -g
+    fi
+else
+    echo "npm is needed to npm install npm"
+    exit 1
+fi
+
+echo ""
 echo "Checking nano"
 
 function __install_nano() {
