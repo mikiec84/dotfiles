@@ -20,6 +20,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/graphite-dash-gen"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/redis-manager"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/airlock"
 		}
 	]
 }
