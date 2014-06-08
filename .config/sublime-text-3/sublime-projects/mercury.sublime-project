@@ -36,6 +36,38 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/html5-router"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/virtual-dom"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/jsconf2014-talk"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/jsfest2014-talk"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/mercury-jsx"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/mercury-jsxify"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/github-widget"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/observ-struct"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/value-event"
 		}
 	]
 }
