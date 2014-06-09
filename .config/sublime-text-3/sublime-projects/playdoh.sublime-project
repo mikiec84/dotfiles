@@ -28,6 +28,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/airlock"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/lynx"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/winston-sentry"
 		}
 	]
 }
