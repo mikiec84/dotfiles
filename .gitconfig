@@ -9,7 +9,7 @@
 	redo = reset --mixed HEAD~1
 	cim = commit -m
 	ciam = commit -a -m
-    wip = "!f() { commit -a -m 'wip $1' }; f"
+    wip = "!f() { git add -A; git commit -m \"wip $1\"; }; f"
 
 	up = !git remote update -p; git merge --ff-only @{u}
 
