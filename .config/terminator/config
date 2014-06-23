@@ -8,7 +8,7 @@
     background_type = transparent
     background_image = None
     foreground_color = "#ffffff"
-    font = Monospace 14
+    font = Monospace 13
     background_color = "#300a24"
     scrollback_infinite = True
     maximise = True

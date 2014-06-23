@@ -36,6 +36,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/winston-sentry"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/build-changelog"
 		}
 	]
 }
