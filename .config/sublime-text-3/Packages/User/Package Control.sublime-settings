@@ -12,6 +12,7 @@
 		"Load file to REPL",
 		"Markdown Preview",
 		"SublimeLinter",
+		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
 		"SublimeREPL",
 		"Themr"

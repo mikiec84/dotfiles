@@ -1,12 +1,17 @@
 {
     "user": {
-        "debug": false,
+        "debug": true,
         "delay": 0.25,
         "error_color": "D02000",
         "gutter_theme": "Packages/SublimeLinter/gutter-themes/Danish Royalty/Danish Royalty.gutter-theme",
         "gutter_theme_excludes": [],
         "lint_mode": "background",
         "linters": {
+            "jscs": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
             "jshint": {
                 "@disable": false,
                 "args": [],
@@ -32,6 +37,7 @@
         "syntax_map": {
             "html (django)": "html",
             "html (rails)": "html",
+            "javascriptnext": "javascript",
             "html 5": "html",
             "php": "html",
             "python django": "python"
