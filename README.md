@@ -33,6 +33,19 @@ bash install.sh
 
 to install all the dependencies
 
+### Ubuntu setup (optional)
+
+**UBUNTU ONLY**
+
+If your running ubunt you can run
+
+```sh
+bash ubuntu.sh
+```
+
+To configure the unity GUI with better
+UI defaults
+
 ### Bootstrap
 
 To copy all the files from `~/projects/dotfiles` into `~`
