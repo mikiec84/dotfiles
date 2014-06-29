@@ -68,6 +68,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/value-event"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/flashphrases"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/raf"
 		}
 	]
 }

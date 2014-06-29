@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/routes-router"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/send-data"
+		}
+	]
+}
