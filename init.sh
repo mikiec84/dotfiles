@@ -29,6 +29,10 @@ fi
 echo ""
 echo "Checking ssh keys"
 
+if [ ! -e ~/.ssh ]; then
+    mkdir ~/.ssh
+fi
+
 if [ ! -e ~/.ssh/id_rsa ]; then
     cd ~/.ssh
     read -p "Please enter email: " email
