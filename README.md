@@ -33,6 +33,16 @@ bash install.sh
 
 to install all the dependencies
 
+### Fetching projects (optional)
+
+```sh
+bash projects.sh
+```
+
+Will install a bunch of projects I work on
+onto a new machine so I can continue working
+on them.
+
 ### Ubuntu setup (optional)
 
 **UBUNTU ONLY**
