@@ -1,6 +1,6 @@
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
-	lgm = lg --stat --first-parent -m
+	lg = log --graph --pretty=brief --date=relative
+	lgm = log --graph --pretty=brief --date=relative --stat --first-parent -m
 	pgm = pull github master
 	pom = pull origin master
 	pgi = pull github integration
@@ -52,6 +52,9 @@
 [branch "master"]
 	remote = origin
 	merge = refs/heads/master
+
+[pretty]
+	brief = %Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset
 
 # URL shorthands
 [url "gitolite@code.uber.internal:"]
