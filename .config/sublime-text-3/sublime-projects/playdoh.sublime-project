@@ -48,6 +48,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/uncaught-exception"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/routes-router"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/wizzard"
 		}
 	]
 }
