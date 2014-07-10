@@ -7,6 +7,7 @@
 	poi = pull origin integration
 	dc = diff --cached
 	a = add --all
+	st = status
 	redo = reset --mixed HEAD~1
 	cim = commit -m
 	ciam = commit -a -m
