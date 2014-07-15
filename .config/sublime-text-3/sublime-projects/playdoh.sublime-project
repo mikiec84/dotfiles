@@ -56,6 +56,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/wizzard"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/uber-nodesol"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/prozess"
 		}
 	]
 }
