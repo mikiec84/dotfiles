@@ -12,6 +12,7 @@
 	cim = commit -m
 	ciam = commit -a -m
 	stat = show --stat
+	amend = commit --amend
 	wip = "!f() { git add -A; git commit -m \"wip $1\"; }; f"
 
 	up = !git remote update -p; git merge --ff-only @{u}
