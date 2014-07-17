@@ -1347,7 +1347,7 @@ sub patch_update_file {
 			$other .= ',e';
 		}
 		for (@{$hunk[$ix]{DISPLAY}}) {
-			print;
+			if ($_) { print; }
 		}
 		print colored $prompt_color, $patch_mode_flavour{VERB},
 		  ($hunk[$ix]{TYPE} eq 'mode' ? ' mode change' :
