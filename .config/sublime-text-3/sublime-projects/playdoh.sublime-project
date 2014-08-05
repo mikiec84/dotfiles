@@ -64,6 +64,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/prozess"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/uberex-client"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/winston-kafka"
 		}
 	]
 }
