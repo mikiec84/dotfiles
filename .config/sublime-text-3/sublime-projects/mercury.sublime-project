@@ -76,6 +76,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/raf"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/xtend"
 		}
 	]
 }
