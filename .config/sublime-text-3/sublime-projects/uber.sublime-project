@@ -12,6 +12,30 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/realtime-api"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/sirvice"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/playdoh-api-scaffold"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/sirvice-demo-app"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/jimhenson"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/send-data"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/rtapi-router"
 		}
 	]
 }
