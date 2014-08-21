@@ -1,0 +1,10 @@
+{
+    "launchers": {
+        "Node": {
+            "command": "node test/index.js",
+            "protocol": "tap"
+        }
+    },
+    "src_files": [ "*.js", "**/*.js" ],
+    "launch_in_dev": ["Node"]
+}
