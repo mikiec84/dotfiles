@@ -13,12 +13,6 @@ function npmify() {
     nstart
 }
 
-## Testem made easier
-
-function testem-n() {
-    testem -f ~/.config/testem.json
-}
-
 # Deals with not disk
 function __nstart() {
     local testling=0
