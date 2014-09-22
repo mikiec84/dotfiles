@@ -8,6 +8,18 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/send-data"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/browserify-precompiled"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/serve-browserify"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/node-levelup"
 		}
 	]
 }

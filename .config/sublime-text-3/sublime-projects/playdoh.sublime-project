@@ -59,6 +59,10 @@
 		},
 		{
 			"follow_symlinks": true,
+			"path": "/home/raynos/projects/zero-config"
+		},
+		{
+			"follow_symlinks": true,
 			"path": "/home/raynos/uber/uber-nodesol"
 		},
 		{
@@ -67,11 +71,27 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/raynos/uber/uberex-client"
+			"path": "/home/raynos/projects/nodeconfeu2014-talk"
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/raynos/uber/winston-kafka"
+			"path": "/home/raynos/projects/controlport-perf"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/rt-logger"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/sirvice"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/realtime-api"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/dispatch"
 		}
 	]
 }

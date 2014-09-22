@@ -79,11 +79,23 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/raynos/projects/xtend"
+			"path": "/home/raynos/projects/main-loop"
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/raynos/projects/main-loop"
+			"path": "/home/raynos/projects/mercury-perf"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/forwardjs2014-talk"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/superfine"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/fishcake"
 		}
 	]
 }
