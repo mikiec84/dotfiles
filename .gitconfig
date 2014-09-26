@@ -13,7 +13,7 @@
 	ciam = commit -a -m
 	stat = show --stat
 	amend = commit --amend
-	wip = "!f() { git add -A; git commit -m \"wip $1\"; }; f"
+	wip = "!f() { git add -A; git commit -n -m \"wip $1\"; }; f"
 
 	iaddpw = add--interactive-words --patch=stage --
 
