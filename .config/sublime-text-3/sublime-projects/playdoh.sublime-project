@@ -92,6 +92,18 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/dispatch"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/playdoh-api-scaffold"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/format-stack"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/fixtures-fs"
 		}
 	]
 }
