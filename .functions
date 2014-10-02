@@ -149,6 +149,23 @@ function pr_github() {
     # TODO: auto merge
 }
 
+function tap-fail() {
+    local file="$(mktemp)"
+    local testfile=${1:-test/index.js}
+
+    node $testfile 1> file;
+
+    local fails=$(cat file | grep 'at:' | awk '{ split($3, a, ":"); print a[1]; }' | uniq | cut -c2-999)
+
+    echo "Failing files: "
+    echo ""
+    echo "$fails"
+    echo ""
+    echo "$(cat file | tail -n5)"
+
+    rm $file;
+}
+
 ## Utils
 
 function set_terminal_title() {

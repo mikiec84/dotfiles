@@ -7,5 +7,4 @@ alias ntest="NODE_ENV=test npm test"
 alias npmcov="rm -rf coverage/ && npm run cover && npm run view-cover"
 alias gpublish="npm version patch && git push origin master --tags"
 alias npmrun='npm -s run'
-alias tap-fail=$'node test/index.js | grep "at:" | awk \'{ split($3, a, ":"); print a[1]; }\' | uniq | cut -c2-100 | xargs -n1 node'
 
