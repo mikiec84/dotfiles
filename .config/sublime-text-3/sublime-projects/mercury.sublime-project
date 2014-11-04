@@ -96,6 +96,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/fishcake"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/signal-geval-observ"
 		}
 	]
 }
