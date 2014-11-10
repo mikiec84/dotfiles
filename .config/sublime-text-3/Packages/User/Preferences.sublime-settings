@@ -17,7 +17,6 @@
 		65,
 		80
 	],
-	"folder_exclude_patterns": ["node_modules"],
 	"shift_tab_unindent": true,
 	"theme": "Nexus.sublime-theme",
 	"translate_tabs_to_spaces": true
