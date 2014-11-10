@@ -4,6 +4,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/dotfiles"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/linux-ec2"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/interviewing"
 		}
 	]
 }
