@@ -100,6 +100,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/signal-geval-observ"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/geval"
 		}
 	]
 }
