@@ -36,6 +36,26 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/rtapi-router"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/node-statsd-client"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/rt-logger"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/winston-kafka"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/connection-node"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/leaked-handles"
 		}
 	]
 }

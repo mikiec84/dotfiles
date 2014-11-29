@@ -7,14 +7,20 @@
 		"GitGutter",
 		"GotoOpenFile",
 		"HTML5",
+		"Jade",
 		"JavaScriptNext - ES6 Syntax",
 		"LESS",
 		"Load file to REPL",
 		"Markdown Preview",
 		"SublimeLinter",
+		"SublimeLinter-contrib-lint-trap",
 		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
 		"SublimeREPL",
 		"Themr"
+	],
+	"repositories":
+	[
+		"https://github.com/uber/SublimeLinter-contrib-lint-trap"
 	]
 }

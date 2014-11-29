@@ -8,7 +8,7 @@
 		"gutter_theme_excludes":
 		[
 		],
-		"lint_mode": "background",
+		"lint_mode": "save only",
 		"linters":
 		{
 			"jscs":
@@ -30,10 +30,21 @@
 				"excludes":
 				[
 				]
+			},
+			"linttrap":
+			{
+				"@disable": true,
+				"args":
+				[
+				],
+				"excludes":
+				[
+				]
 			}
 		},
 		"mark_style": "fill",
 		"no_column_highlights_line": true,
+		"passive_warnings": false,
 		"paths":
 		{
 			"linux":
