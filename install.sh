@@ -170,13 +170,13 @@ else
 fi
 
 echo ""
-echo "Checking npm@1.4.10"
+echo "Checking npm@1.4.28"
 
 if ( hash npm 2>/dev/null ); then
-    if ( npm -v | grep "1.4.10" 1>/dev/null ); then
+    if ( npm -v | grep "1.4.28" 1>/dev/null ); then
         echo " - Already installed npm"
     else
-        npm i npm@1.4.10 -g
+        npm i npm@1.4.28 -g
     fi
 else
     echo "npm is needed to npm install npm"
