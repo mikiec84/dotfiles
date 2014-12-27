@@ -4,7 +4,7 @@
 		"debug": true,
 		"delay": 0.25,
 		"error_color": "D02000",
-		"gutter_theme": "Packages/SublimeLinter/gutter-themes/Danish Royalty/Danish Royalty.gutter-theme",
+		"gutter_theme": "Packages/SublimeLinter3-raynos/gutter-themes/Circle/Circle.gutter-theme",
 		"gutter_theme_excludes":
 		[
 		],
@@ -33,10 +33,12 @@
 			},
 			"linttrap":
 			{
-				"@disable": true,
+				"@disable": false,
 				"args":
 				[
 				],
+				"disable_if_not_dependency": false,
+				"enable_if_dependency": true,
 				"excludes":
 				[
 				]

@@ -104,6 +104,18 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/geval"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/data-set"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/ev-store"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/individual"
 		}
 	]
 }

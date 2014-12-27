@@ -1,17 +1,27 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2",
+		"ssl-linux"
+	],
 	"installed_packages":
 	[
 		"All Autocomplete",
 		"Dotfiles Syntax Highlighting",
+		"ExtendedTabSwitcher",
 		"Git",
 		"GitGutter",
-		"GotoOpenFile",
 		"HTML5",
 		"Jade",
 		"JavaScriptNext - ES6 Syntax",
 		"LESS",
 		"Load file to REPL",
 		"Markdown Preview",
+		"Package Control",
 		"SublimeLinter",
 		"SublimeLinter-contrib-lint-trap",
 		"SublimeLinter-jscs",
@@ -21,6 +31,8 @@
 	],
 	"repositories":
 	[
-		"https://github.com/uber/SublimeLinter-contrib-lint-trap"
+		"https://github.com/uber/SublimeLinter-contrib-lint-trap",
+		"https://github.com/Raynos/SublimeLinter3",
+		"https://github.com/Raynos/SublimeLinter3-raynos"
 	]
 }

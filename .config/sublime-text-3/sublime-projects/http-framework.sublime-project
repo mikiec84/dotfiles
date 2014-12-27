@@ -20,6 +20,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/node-levelup"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/projects/tape"
 		}
 	]
 }

@@ -51,11 +51,11 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/raynos/uber/connection-node"
+			"path": "/home/raynos/projects/leaked-handles"
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/raynos/projects/leaked-handles"
+			"path": "/home/raynos/uber/playdoh-clients"
 		}
 	]
 }
