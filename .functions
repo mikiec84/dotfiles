@@ -178,7 +178,10 @@ function pygless() {
 }
 
 function disable_workspace_keys() {
-
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt><Shift><Super>Left']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt><Shift><Super>Right']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt><Shift><Super>Up']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control><Alt><Shift><Super>Down']"
 }
 
 function enable_workspace_keys() {
