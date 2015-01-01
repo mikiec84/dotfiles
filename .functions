@@ -176,3 +176,14 @@ function set_terminal_title() {
 function pygless() {
     LESSOPEN="| pygmentize -f terminal256 -O style=native -g %s" less -R "$@";
 }
+
+function disable_workspace_keys() {
+
+}
+
+function enable_workspace_keys() {
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt>Left']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt>Right']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control><Alt>Down']"
+}
