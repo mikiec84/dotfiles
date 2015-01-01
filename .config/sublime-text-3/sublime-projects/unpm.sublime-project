@@ -8,6 +8,14 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/projects/safe-json-parse"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/dispatch"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/node-statsd-client"
 		}
 	]
 }

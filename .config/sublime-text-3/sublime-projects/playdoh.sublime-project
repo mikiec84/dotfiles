@@ -108,6 +108,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/home/raynos/uber/logtron"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/home/raynos/uber/raven-node"
 		}
 	]
 }
