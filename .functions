@@ -190,3 +190,8 @@ function enable_workspace_keys() {
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Control><Alt>Down']"
 }
+
+function disable_other_spaces() {
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt><Shift><Super>Left']"
+    gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt><Shift><Super>Right']"
+}
