@@ -2,3 +2,5 @@
 .DS_Store
 sublime/User/Package Control.cache
 *.sublime-workspace
+*.log
+markdown/
