@@ -1,5 +1,7 @@
 set +h
 
+[ -r "~/.extra"] && source "~/.extra"
+
 # Run nvm so that it's accessible
 if [ -e ~/projects/nvm ]; then
     . ~/projects/nvm/nvm.sh
@@ -11,7 +13,7 @@ fi
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{extra,path,bash_prompt,exports,aliases,functions}; do
+for file in ~/.{path,bash_prompt,exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
