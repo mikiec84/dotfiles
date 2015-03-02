@@ -13,7 +13,7 @@
 		{
 			"jscs":
 			{
-				"@disable": false,
+				"@disable": true,
 				"args":
 				[
 				],
