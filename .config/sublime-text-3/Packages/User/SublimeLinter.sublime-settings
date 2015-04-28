@@ -33,12 +33,22 @@
 			},
 			"linttrap":
 			{
-				"@disable": false,
+				"@disable": true,
 				"args":
 				[
 				],
 				"disable_if_not_dependency": false,
 				"enable_if_dependency": true,
+				"excludes":
+				[
+				]
+			},
+			"standard":
+			{
+				"@disable": false,
+				"args":
+				[
+				],
 				"excludes":
 				[
 				]
