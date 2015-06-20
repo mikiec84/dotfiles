@@ -14,6 +14,7 @@
 	stat = show --stat
 	amend = commit --amend
 	wip = "!f() { git add -A; git commit -n -m \"wip $1\"; }; f"
+	yolo = git add -A; git commit -n -m "wip yolo"
 
 	iaddpw = add--interactive-words --patch=stage --
 
