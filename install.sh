@@ -72,13 +72,13 @@ else
 fi
 
 echo ""
-echo "Checking node@0.10.26"
+echo "Checking node@0.10.32"
 
-if [ "$(node -v 2>/dev/null)" != "v0.10.26" ]; then
-    echo " - Fetching node@0.10.26"
+if [ "$(node -v 2>/dev/null)" != "v0.10.32" ]; then
+    echo " - Fetching node@0.10.32"
     . ~/projects/nvm/nvm.sh
-    nvm install v0.10.26
-    nvm use v0.10.26
+    nvm install v0.10.32
+    nvm use v0.10.32
 else
     echo " - Already installed node@0.10.26";
 fi
