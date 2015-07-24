@@ -1,5 +1,6 @@
 # create projects folder
 set -e
+set -x
 
 if [ ! -e ~/projects ]; then
     mkdir ~/projects
@@ -128,17 +129,29 @@ else
 fi
 
 echo ""
+echo "Checking go"
+
+if ( hash go 2>/dev/null ); then
+    echo " - Already installed go"
+else
+    echo " - Fetching go"
+    cd ~/projects
+    wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz
+fi
+
+echo ""
 echo "Checking github/hub"
 
 if ( hash hub 2>/dev/null ); then
-    echo " - Already installed github/hub"
+   echo " - Already installed github/hub"
 else
-    echo " - Fetching hub"
-    sudo apt-get install rake
-    cd ~/projects
-    git clone git://github.com/github/hub.git
-    cd hub
-    sudo rake install
+   echo " - Fetching hub"
+   cd ~/projects
+   git clone git://github.com/github/hub.git
+   cd hub
+   ./script/build
+   cp hub ~/bin/hub
 fi
 
 echo ""
@@ -170,13 +183,13 @@ else
 fi
 
 echo ""
-echo "Checking npm@1.4.28"
+echo "Checking npm@2.7.4"
 
 if ( hash npm 2>/dev/null ); then
-    if ( npm -v | grep "1.4.28" 1>/dev/null ); then
+    if ( npm -v | grep "2.7.4" 1>/dev/null ); then
         echo " - Already installed npm"
     else
-        npm i npm@1.4.28 -g
+        npm i npm@2.7.4 -g
     fi
 else
     echo "npm is needed to npm install npm"
