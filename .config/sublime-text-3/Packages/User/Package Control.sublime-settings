@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -24,6 +25,7 @@
 		"SublimeLinter",
 		"SublimeLinter-contrib-lint-trap",
 		"SublimeLinter-contrib-standard",
+		"SublimeLinter-cpplint",
 		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
 		"SublimeREPL",
