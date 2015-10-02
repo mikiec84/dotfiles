@@ -16,7 +16,7 @@
 	wip = "!f() { git add -A; git commit -n -m \"wip $1\"; }; f"
 	yolo = "!f() { git add -A; git commit -n -m \"wip yolo\"; }; f"
 
-	addw = add--interactive-words --
+	addw = add--interactive-words --patch=stage --
 
 	up = !git remote update -p; git merge --ff-only @{u}
 
