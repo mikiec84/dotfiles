@@ -749,7 +749,7 @@ sub parse_diff {
 	my @diff = run_cmd_pipe("git", @diff_cmd, "--", $path);
 	my @colored = ();
 	if ($diff_use_color) {
-		@colored = run_cmd_pipe("git", @diff_cmd, qw(--color --color-words --), $path);
+		@colored = run_cmd_pipe("git", @diff_cmd, qw(--color --word-diff --), $path);
 	}
 	my (@hunk) = { TEXT => [], DISPLAY => [], TYPE => 'header' };
 
