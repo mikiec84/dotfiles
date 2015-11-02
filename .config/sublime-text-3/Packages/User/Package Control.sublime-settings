@@ -6,6 +6,8 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
+		"C++ Starting Kit",
+		"C++11",
 		"Dotfiles Syntax Highlighting",
 		"ExtendedTabSwitcher",
 		"Git",
@@ -23,8 +25,7 @@
 		"Pretty JSON",
 		"SJSON",
 		"SublimeLinter",
-		"SublimeLinter-contrib-lint-trap",
-		"SublimeLinter-contrib-standard",
+		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-cpplint",
 		"SublimeLinter-jscs",
 		"SublimeLinter-jshint",
