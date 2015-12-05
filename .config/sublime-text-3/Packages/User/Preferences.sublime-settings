@@ -1,14 +1,15 @@
 {
-	"color_scheme": "Packages/User/JavaScriptNext (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/JavaScriptNext (SL) (SL).tmTheme",
 	"draw_minimap_border": true,
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 10,
+	"font_size": 9,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
 		"GitGutter",
+		"SublimeLinter-contrib-lint-trap",
 		"Vintage"
 	],
 	"margin": 0,

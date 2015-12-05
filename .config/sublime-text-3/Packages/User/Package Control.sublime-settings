@@ -1,6 +1,8 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"SublimeLinter-contrib-lint-trap"
 	],
 	"installed_packages":
 	[
@@ -22,10 +24,8 @@
 		"Pretty JSON",
 		"SJSON",
 		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-contrib-lint-trap",
-		"SublimeLinter-contrib-standard",
-		"SublimeLinter-jscs",
-		"SublimeLinter-jshint",
 		"SublimeREPL",
 		"Theme - Nexus",
 		"Theme - Numix Light",

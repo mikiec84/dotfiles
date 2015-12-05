@@ -15,6 +15,7 @@
 	amend = commit --amend
 	wip = "!f() { git add -A; git commit -n -m \"wip $1\"; }; f"
 	yolo = "!f() { git add -A; git commit -n -m \"wip yolo\"; }; f"
+	bav = "!f() { git for-each-ref --sort=-committerdate refs/remotes/origin --format=\"%(refname) %(committerdate) %(authorname)\"; }; f"
 
 	addw = add--interactive-words --patch=stage --
 
