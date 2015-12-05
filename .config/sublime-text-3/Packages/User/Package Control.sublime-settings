@@ -25,7 +25,7 @@
 		"SJSON",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
-		"SublimeLinter-contrib-lint-trap",
+		"SublimeLinter-cpplint",
 		"SublimeREPL",
 		"Theme - Nexus",
 		"Theme - Numix Light",
