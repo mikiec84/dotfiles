@@ -49,6 +49,16 @@ else
 fi
 
 echo ""
+echo "Checking vim"
+
+if ( hash vim 2>/dev/null ); then
+    echo " - Already installed vim"
+else
+    echo " - Fetching vim"
+    sudo apt-get install vim
+fi
+
+echo ""
 echo "Checking rupa/z"
 
 # install z
