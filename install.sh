@@ -148,18 +148,6 @@ else
 fi
 
 echo ""
-echo "Checking go"
-
-if ( hash go 2>/dev/null ); then
-    echo " - Already installed go"
-else
-    echo " - Fetching go"
-    cd ~/projects
-    wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz
-fi
-
-echo ""
 echo "Checking github/hub"
 
 if ( hash hub 2>/dev/null ); then
