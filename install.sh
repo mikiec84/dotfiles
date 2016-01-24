@@ -244,9 +244,4 @@ else
 fi
 
 echo ""
-echo "Sourching bootstrap.sh"
-
-source ~/projects/dotfiles/bootstrap.sh
-
-echo ""
 echo "All finished"
