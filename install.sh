@@ -182,14 +182,13 @@ if ( which /usr/local/bin/node 1>/dev/null ); then
 else
     echo " - Fetching node"
     cd ~/projects
-    wget "http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz"
-    tar -zxvf node-v0.10.28.tar.gz
-    cd node-v0.10.28
+    git clone git@github.com:nodejs/node
+    cd node
+    git checkout v0.10.32-release
     ./configure
     make -j 5
     sudo make install
     cd ..
-    rm node-v0.10.28.tar.gz
 fi
 
 echo ""
