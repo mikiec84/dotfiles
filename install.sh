@@ -36,10 +36,8 @@ if ( ! grep 'git config --global user.name' 1>/dev/null 2>/dev/null ~/.extra ); 
     echo "git config --global user.name '$username'" >> ~/.extra
 fi
 
-
 echo ""
 echo "Checking curl"
-
 
 if ( hash curl 2>/dev/null ); then
     echo " - Already installed curl"
@@ -47,6 +45,17 @@ else
     echo " - Fetching curl"
     sudo apt-get install curl
 fi
+
+echo ""
+echo "Checking htop"
+
+if ( hash htop 2>/dev/null ); then
+    echo " - Already installed htop"
+else
+    echo " - Fetching htop"
+    sudo apt-get install htop
+fi
+
 
 echo ""
 echo "Checking vim"
