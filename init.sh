@@ -69,7 +69,7 @@ echo "Sourcing dotfiles"
 cd ~/projects/dotfiles
 git submodule init
 git submodule update
-source ~/projects/dotfiles/bootstrap.sh
+echo y | source ~/projects/dotfiles/bootstrap.sh
 
 echo ""
 echo "All finished"
