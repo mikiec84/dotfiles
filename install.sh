@@ -151,14 +151,13 @@ echo ""
 echo "Checking github/hub"
 
 if ( hash hub 2>/dev/null ); then
-   echo " - Already installed github/hub"
+    echo " - Already installed github/hub"
 else
-   echo " - Fetching hub"
-   cd ~/projects
-   git clone git://github.com/github/hub.git
-   cd hub
-   ./script/build
-   cp hub ~/bin/hub
+    echo " - Fetching hub"
+    wget https://github.com/github/hub/releases/download/v2.2.3/hub-linux-amd64-2.2.3.tgz
+    tar -C ~/projects -xzf hub-linux-amd64-2.2.3.tgz
+    mv ~/projects/hub-linux-amd64-2.2.3 ~/projects/hub
+    ln -s ~/projects/hub/bin/hub ~/bin/hub
 fi
 
 echo ""
