@@ -5,6 +5,10 @@ if [ ! -e ~/projects ]; then
     mkdir ~/projects
 fi
 
+echo ""
+echo "Running apt-get update"
+
+sudo apt-get update
 
 echo ""
 echo "Checking git"
