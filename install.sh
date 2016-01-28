@@ -56,6 +56,15 @@ else
     sudo apt-get install htop
 fi
 
+echo ""
+echo "Checking jq"
+
+if ( hash jq 2>/dev/null ); then
+    echo " - Already installed jq"
+else
+    echo " - Fetching jq"
+    sudo apt-get install jq
+fi
 
 echo ""
 echo "Checking vim"
