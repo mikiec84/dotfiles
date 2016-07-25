@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"SublimeLinter-contrib-lint-trap"
 	],
 	"installed_packages":
 	[
@@ -11,6 +10,7 @@
 		"C++11",
 		"Dotfiles Syntax Highlighting",
 		"ExtendedTabSwitcher",
+		"Flow",
 		"Git",
 		"GitGutter",
 		"HTML5",
@@ -33,7 +33,8 @@
 		"Theme - Numix Light",
 		"Theme - Phoenix",
 		"Themr",
-		"ThriftSyntax"
+		"ThriftSyntax",
+		"TypeScript"
 	],
 	"repositories":
 	[
