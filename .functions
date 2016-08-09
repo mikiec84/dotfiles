@@ -179,7 +179,7 @@ function watcher()
   WATCHERFILE=/tmp/watcher$$
   shift
   while true; do
-    WATCHERHEIGHT=$(($LINES - 7))
+    WATCHERHEIGHT=$(($LINES - 5))
     ( eval $* ) | head -n ${WATCHERHEIGHT} > ${WATCHERFILE} 2>/dev/null
     clear
     /bin/echo -n "Every ${WATCHERTIME} seconds - "
