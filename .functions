@@ -173,6 +173,26 @@ function set_terminal_title() {
     PROMPT_COMMAND='echo -ne "\033]0;${___TERMINAL_TITLE}\007"'
 }
 
+function watcher()
+{ 
+  WATCHERTIME=$1
+  WATCHERFILE=/tmp/watcher$$
+  shift
+  while true; do
+    WATCHERHEIGHT=$(($LINES - 7))
+    ( eval $* ) | head -n ${WATCHERHEIGHT} > ${WATCHERFILE} 2>/dev/null
+    clear
+    /bin/echo -n "Every ${WATCHERTIME} seconds - "
+    date
+    /bin/echo
+    cat ${WATCHERFILE}
+    \rm -f ${WATCHERFILE}
+    /bin/echo
+    /bin/echo "=="
+    sleep ${WATCHERTIME}
+  done
+}
+
 function pygless() {
     LESSOPEN="| pygmentize -f terminal256 -O style=native -g %s" less -R "$@";
 }
