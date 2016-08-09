@@ -1,7 +1,6 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/Next (SL).tmTheme",
 	"draw_minimap_border": true,
-	"typescript_tsdk": "/home/raynos/projects/nvm/v0.10.32/lib/node_modules/typescript/lib",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -28,5 +27,6 @@
 	],
 	"shift_tab_unindent": true,
 	"theme": "Nexus.sublime-theme",
-	"translate_tabs_to_spaces": true
+	"translate_tabs_to_spaces": true,
+	"typescript_tsdk": "/home/raynos/projects/nvm/v0.10.32/lib/node_modules/jsig/lib"
 }
