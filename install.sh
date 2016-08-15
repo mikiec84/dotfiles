@@ -1,6 +1,6 @@
 # create projects folder
 set -e
-set -x
+# set -x
 
 if [ ! -e ~/projects ]; then
     mkdir ~/projects
@@ -109,7 +109,7 @@ if [ "$(node -v 2>/dev/null)" != "v0.10.32" ]; then
     nvm install v0.10.32
     nvm use v0.10.32
 else
-    echo " - Already installed node@0.10.26";
+    echo " - Already installed node@0.10.32";
 fi
 
 
@@ -200,10 +200,10 @@ echo ""
 echo "Checking npm@2.7.4"
 
 if ( hash npm 2>/dev/null ); then
-    if ( npm -v | grep "2.7.4" 1>/dev/null ); then
+    if ( npm -v | grep "2.15" 1>/dev/null ); then
         echo " - Already installed npm"
     else
-        npm i npm@2.7.4 -g
+        npm i npm@2.15 -g
     fi
 else
     echo "npm is needed to npm install npm"
