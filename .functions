@@ -215,3 +215,10 @@ function disable_other_spaces() {
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt><Shift><Super>Left']"
     gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt><Shift><Super>Right']"
 }
+
+function top_grep() {
+    local expr = "$1";
+    top -d1 -p $(pgrep $expr | head -n20 | xargs | sed 's/ /,/g')
+}
+
+
