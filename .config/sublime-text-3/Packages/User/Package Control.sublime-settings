@@ -18,13 +18,11 @@
 		"JavaScriptNext - ES6 Syntax",
 		"JSON Reindent",
 		"LESS",
-		"Load file to REPL",
 		"Markdown Extended",
 		"Markdown Preview",
 		"Monokai Extended",
 		"Package Control",
 		"Pretty JSON",
-		"SJSON",
 		"SublimeLinter",
 		"SublimeLinter-contrib-eslint",
 		"SublimeLinter-cpplint",
@@ -33,7 +31,8 @@
 		"Theme - Numix Light",
 		"Theme - Phoenix",
 		"Themr",
-		"ThriftSyntax"
+		"ThriftSyntax",
+		"TypeScript"
 	],
 	"repositories":
 	[

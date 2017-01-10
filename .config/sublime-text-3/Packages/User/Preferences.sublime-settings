@@ -8,8 +8,7 @@
 		".svn",
 		".git",
 		".hg",
-		"CVS",
-		"node_modules"
+		"CVS"
 	],
 	"font_size": 10,
 	"highlight_line": true,
