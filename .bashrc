@@ -1,5 +1,11 @@
 set +h
 
+# test if the prompt var is not set
+if [ -z "$PS1" ]; then
+    # prompt var is not set, so this is *not* an interactive shell
+    exit
+fi
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
