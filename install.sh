@@ -121,10 +121,24 @@ if ( hash google-chrome 2>/dev/null ); then
 else
     echo " - Fetching Chrome"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo apt-get -f install
     sudo apt-get install libappindicator1
     sudo dpkg -i google-chrome*.deb
+    sudo apt-get -f install
 fi
+
+echo ""
+echo "Checking vs code"
+
+if ( hash code 2>/dev/null ); then
+    echo " - Already installed vs code"
+else
+    echo " - Fetching vs code"
+    wget https://vscode-update.azurewebsites.net/1.9.1/linux-deb-x64/stable
+    sudo dpkg -i stable
+    sudo apt-get -f install
+    rm stable
+fi
+
 
 echo ""
 echo "Checking Sublime Text 3"
