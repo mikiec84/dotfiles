@@ -121,6 +121,8 @@ if ( hash google-chrome 2>/dev/null ); then
 else
     echo " - Fetching Chrome"
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo apt-get -f install
+    sudo apt-get install libappindicator1
     sudo dpkg -i google-chrome*.deb
 fi
 
@@ -157,6 +159,17 @@ else
 fi
 
 echo ""
+echo "Checking go"
+
+if ( hash go 2>/dev/null ); then
+    echo " - Already installed go"
+else
+    echo " - Fetching go"
+    wget https://storage.googleapis.com/golang/go1.7.5.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.7.5.linux-amd64.tar.gz
+fi
+
+echo ""
 echo "Checking github/hub"
 
 if ( hash hub 2>/dev/null ); then
@@ -177,6 +190,19 @@ if ( hash g++ 2>/dev/null ); then
 else 
     echo " - Fetching g++"
     sudo apt-get install g++
+fi
+
+echo ""
+echo "Checking gimp"
+
+if ( hash gimp 2>/dev/null ); then
+    echo " - Already installed gimp"
+else
+    echo " - Fetching gimp"
+
+    sudo add-apt-repository ppa:otto-kesselgulasch/gimp
+    sudo apt-get update
+    sudo apt-get install gimp
 fi
 
 echo ""
