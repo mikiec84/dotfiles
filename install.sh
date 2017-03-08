@@ -183,6 +183,17 @@ else
     sudo tar -C /usr/local -xzf go1.7.5.linux-amd64.tar.gz
 fi
 
+
+echo ""
+echo "Checking graphviz"
+
+if ( hash dot 2>/dev/null ); then
+    echo " - Already installed graphviz"
+else
+    echo " - Fetching graphviz"
+    sudo apt-get install graphviz
+fi
+
 echo ""
 echo "Checking github/hub"
 
