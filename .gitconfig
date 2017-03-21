@@ -1,5 +1,6 @@
 [alias]
 	lg = log --graph --pretty=brief --date=relative
+	lga = log --graph --pretty=authorbrief --date=relative
 	lgm = log --graph --pretty=brief --date=relative --stat --first-parent -m
 	pgm = pull github master
 	pom = pull origin master
@@ -61,6 +62,7 @@
 
 [pretty]
 	brief = %Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset
+	authorbrief = %Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%ar)%Creset
 
 # URL shorthands
 [url "gitolite@code.uber.internal:"]
