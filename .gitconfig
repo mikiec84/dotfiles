@@ -28,6 +28,8 @@
 
 	ffm = "!f() { git fetch --all; git merge --ff-only $1; }; f"
 
+	gb = "!f() { git grep -n $1 | perl -F':' -anpe '$_=`git blame -L$F[1],+1 $F[0]`'; }; f"
+
 [core]
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
