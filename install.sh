@@ -47,6 +47,16 @@ else
 fi
 
 echo ""
+echo "Checking make"
+
+if ( hash make 2>/dev/null ); then
+    echo " - Already installed make"
+else
+    echo " - Fetching make"
+    sudo apt-get install make
+fi
+
+echo ""
 echo "Checking htop"
 
 if ( hash htop 2>/dev/null ); then
