@@ -240,7 +240,7 @@ else
     cd ~/projects
     git clone git@github.com:nodejs/node
     cd node
-    git checkout v0.10.48-release
+    git checkout v0.10.48
     ./configure
     make -j 5
     sudo make install
