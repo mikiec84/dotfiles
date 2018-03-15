@@ -103,13 +103,13 @@ fi
 echo ""
 echo "Checking node@0.10.32"
 
-if [ "$(node -v 2>/dev/null)" != "v0.10.32" ]; then
-    echo " - Fetching node@0.10.32"
+if [ "$(node -v 2>/dev/null)" != "v0.10.48" ]; then
+    echo " - Fetching node@0.10.48"
     . ~/projects/nvm/nvm.sh
-    nvm install v0.10.32
-    nvm use v0.10.32
+    nvm install v0.10.48
+    nvm use v0.10.48
 else
-    echo " - Already installed node@0.10.32";
+    echo " - Already installed node@0.10.48";
 fi
 
 
@@ -240,7 +240,7 @@ else
     cd ~/projects
     git clone git@github.com:nodejs/node
     cd node
-    git checkout v0.10.32-release
+    git checkout v0.10.48-release
     ./configure
     make -j 5
     sudo make install
